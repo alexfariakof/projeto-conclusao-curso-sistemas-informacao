@@ -1,0 +1,11 @@
+﻿USE [DespesasPessoaisDB]
+GO
+
+CREATE TABLE [dbo].[TipoCategoria](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[descricao] [varchar](50) NULL,
+ CONSTRAINT [PK_TipoCategoria] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
