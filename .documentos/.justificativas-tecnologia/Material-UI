@@ -1,9 +1,6 @@
 
 
-uso de responsividade o que traz flexibilidade no controle do tamanho da telas
-sejam elas um smartphone, tablet ou um pagina web
-assim conseguimos formatar e controlar o funcionamento dos elementos de forma dinamica
-xs, sm, md, lg, xl
+
 
 Hooks: useMediaQuery
 
@@ -12,6 +9,10 @@ O React é a biblioteca mais popular do JavaScript e é usada para construir uma
 
 Tecnologia responsiva 
 É a “adaptação de uma interface a qualquer resolução de tela, adaptando a experiência de navegação de acordo com as necessidades dos usuários e também de cada tipo de mídia. Podemos dizer que ele é o melhor amigo da experiência do usuário.” Andrea Pacheco.
+uso de responsividade o que traz flexibilidade no controle do tamanho da telas
+sejam elas um smartphone, tablet ou um pagina web
+assim conseguimos formatar e controlar o funcionamento dos elementos de forma dinamica
+xs, sm, md, lg, xl
 
 Material UI é uma biblioteca de componentes React de código aberto que implementa o Material Design do Google .
 Ele inclui uma coleção abrangente de componentes pré-construídos que estão prontos para uso na produção imediatamente.
