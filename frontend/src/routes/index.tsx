@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Button } from '@mui/material';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useDrawerContext } from '../shared/contexts';
+import { useAppThemeContext, useDrawerContext } from '../shared/contexts';
 import { Dashboard } from '../pages/Dashboard';
 import { Despesas } from '../pages/Despesas';
 import { Lancamentos } from '../pages/Lancamentos';
@@ -10,7 +10,8 @@ import { PrimeiroAcesso } from '../pages/PrimeiroAcesso';
 
 
 export const AppRoutes = () => {
-    const { toggleDrawerOpen, setDrawerOptions } = useDrawerContext();
+    const { toggleTheme } = useAppThemeContext();
+    const { toggleDrawerOpen, setDrawerOptions } = useDrawerContext();    
 
     useEffect(() => {
         setDrawerOptions([
@@ -45,7 +46,7 @@ export const AppRoutes = () => {
             <Route path='/receitas' element={<Receitas />} />
             <Route path='/categorias' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Categoria</Button>} />
             <Route path='/lancamentos' element={<Lancamentos />} />
-            <Route path='/configuracoes' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Configurações</Button>} />
+            <Route path='/configuracoes' element={<Button variant='contained' color='primary' onClick={toggleTheme} >Configurações</Button>} />
             <Route path='/sair' />
             <Route path='/primeiro-acesso' element={<Navigate to='primeiro-acesso' />} />
             <Route path='/alterar-senha' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Aletar Senha</Button>} />

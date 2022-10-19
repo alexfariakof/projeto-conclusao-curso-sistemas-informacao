@@ -10,16 +10,20 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using MySql.Data.MySqlClient;
 using Serilog;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Security.Cryptography;
 
 namespace backend
 {
@@ -31,6 +35,7 @@ namespace backend
         }
 
         public IConfiguration Configuration { get; }
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -47,6 +52,8 @@ namespace backend
              });
 
             // Configuração de Conexão com Bando de Dados
+            //string connection = Configuration["DefaultMySqlConnection:MySqlConnectionString"];
+            //string connection = Configuration["MySqlConnection:MySqlConnectionString"];
             string connection = Configuration["DockerMySqlConnection:MySqlConnectionString"];
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connection));
             MigrateDatabase(connection);

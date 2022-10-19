@@ -8,7 +8,6 @@ export const App = () => {
     return (
         <AuthProvider>
             <AppThemeProvider >
-
                 <Login>
                     <DrawerProvider   >
                         <BrowserRouter>
@@ -18,7 +17,6 @@ export const App = () => {
                         </BrowserRouter>
                     </DrawerProvider>
                 </Login>
-
             </AppThemeProvider>
         </AuthProvider>
     );
