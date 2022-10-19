@@ -1,0 +1,35 @@
+
+
+uso de responsividade o que traz flexibilidade no controle do tamanho da telas
+sejam elas um smartphone, tablet ou um pagina web
+assim conseguimos formatar e controlar o funcionamento dos elementos de forma dinamica
+xs, sm, md, lg, xl
+
+Hooks: useMediaQuery
+
+
+O React é a biblioteca mais popular do JavaScript e é usada para construir uma interface de usuário (UI). Ela oferece uma resposta excelente para o usuário adicionar comandos usando um novo método de renderizar sites. Os componentes dessa ferramenta foram desenvolvidos pelo Facebook.
+
+Tecnologia responsiva 
+É a “adaptação de uma interface a qualquer resolução de tela, adaptando a experiência de navegação de acordo com as necessidades dos usuários e também de cada tipo de mídia. Podemos dizer que ele é o melhor amigo da experiência do usuário.” Andrea Pacheco.
+
+Material UI é uma biblioteca de componentes React de código aberto que implementa o Material Design do Google .
+Ele inclui uma coleção abrangente de componentes pré-construídos que estão prontos para uso na produção imediatamente.
+A interface do usuário do material é bonita por design e apresenta um conjunto de opções de personalização que facilitam a implementação de seu próprio sistema de design personalizado em cima de nossos componentes.
+
+O .NET 6.0 foi lançado a partir de 8 de novembro de 2021 e é uma grande versão com um amplo conjunto de novos recursos e melhorias de compilação.
+TRata-se de um conjunto de libs que temos para acessar recursos nativos dos dispositivos, como sensores, storage e afins. 
+
+.NET Core 
+NET Core é uma plataforma para desenvolvimento de aplicações criada e mantida pela Microsoft como um projeto de código aberto. Sendo uma solução mais leve e modular que o . NET Framework e pode ser usada em diferentes sistemas operacionais como Windows, Mac e Linux.
+
+API REST serve para a comunicação entre aplicações para estabelecer o consumo de informações de forma rápida e segura. É utilizada para estruturar qualquer modelo de aplicações web para os dias atuais, onde temos um alto volume de trocas de dados sendo processados de forma assíncrona entre diversas aplicações.
+
+O Entity Framework (EF) Core é uma versão leve, extensível, de código aberto e multiplataforma da popular tecnologia de acesso a dados do Entity Framework . O EF Core pode servir como um mapeador relacional de objeto (O/RM), que: Habilita o . NET para trabalhar com um banco de dados usando .
+
+Swagger 
+O Swagger é um framework composto por diversas ferramentas que, independente da linguagem, auxilia a descrição, consumo e visualização de serviços de uma API REST.
+
+Migrations permitem a criação e manipulação de bancos de dados, tendo como objetivo fornecer uma série de recursos, como por exemplo, manter um histórico de alterações que a base de dados vai sofrendo ao longo do tempo, com esses históricos de alterações sendo mantido é possível reverter qualquer alteração feita.
+
+O SQL Server 2019 Express é uma edição gratuita do SQL Server, ideal para desenvolvimento e produção de aplicações de área de trabalho, Web e pequenos servidores.

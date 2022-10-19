@@ -1,0 +1,30 @@
+Problem:
+interface ILayoutMasterPageProps  {
+    titulo: string;
+}
+
+export const LayoutMasterPage: React.FC<React.PropsWithChildren> = ({children}) => {
+    return (
+        <Box>
+            Teste LayoutMasterPage-
+            {children}
+        </Box>
+    );
+};
+
+Resolved:
+import { Box } from "@mui/system";
+ 
+interface ILayoutMasterPageProps  {
+    children : React.ReactNode;
+    titulo: string;
+}
+
+export const LayoutMasterPage: React.FC<ILayoutMasterPageProps> = ({children}) => {
+    return (
+        <Box>
+            Teste LayoutMasterPage-
+            {children}
+        </Box>
+    );
+};

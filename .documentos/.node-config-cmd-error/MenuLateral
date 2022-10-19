@@ -1,0 +1,34 @@
+
+
+Problem:
+import { Drawer } from "@mui/material"
+
+export const MenuLateral: React.FC = ({ children }) => {
+    return (
+        <>
+            <Drawer open={true} variant='permanent' >
+                teste
+            </Drawer>
+            
+            
+            { children }    
+        </>        
+    );
+};
+
+Resolved:
+import React from 'react';
+import { Drawer } from "@mui/material"
+
+
+export const MenuLateral: React.FC<React.PropsWithChildren> = ({ children }) => {
+    return (
+        <>
+            <Drawer open={true} variant='permanent' >
+                teste
+            </Drawer>           
+            
+            {children}    
+        </>        
+    );
+};

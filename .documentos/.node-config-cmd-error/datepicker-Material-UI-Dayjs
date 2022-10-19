@@ -1,0 +1,11 @@
+Problem: Componentes React DatePiker Day.js
+
+URL: https://mui.com/pt/x/react-date-pickers/getting-started/
+   Não resolve a documentção do Material UI  instalar somente npm install @date-io/dayjs
+
+Resolved:
+URL-1: https://mui.com/pt/x/react-date-pickers/getting-started/
+URL-2: https://www.npmjs.com/package/dayjs
+Instalar os 2 pacotes pois precisara do "AdapterDayjs" 
+     npm install @date-io/dayjs
+     npm install dayjs --save

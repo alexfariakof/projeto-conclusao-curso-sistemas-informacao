@@ -1,0 +1,10 @@
+docker pull mcr.microsoft.com/mssql/server:2022-latest
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=!aA12345" -p 1433:1433 --name sqlServerinDocker --hostname sqlServerinDocker -d mcr.microsoft.com/mssql/server:2022-latest
+
+docker commit sqlServer1
+docker tag 90008d5f5231 alexfariakof/sqlserver-202208
+docker commit sqlServer1 sqlserver-bkp202208
+docker push alexfariakof/sqlserver-202208
+
+docker pull mcr.microsoft.com/mssql/server:2019-latest
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=!aA12345" -p 1433:1433 --name sqlServer2019InDocker --hostname sqlServer2019InDocker -d mcr.microsoft.com/mssql/server:2019-latest

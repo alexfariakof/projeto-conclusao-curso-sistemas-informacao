@@ -1,0 +1,2 @@
+Problem: Can't resolve 'react/jsx-runtime' error while use try to create the shared component with storybook in react-typescript
+RESOLVED:  npm install --save-dev @types/react@latest @types/react-dom@latest

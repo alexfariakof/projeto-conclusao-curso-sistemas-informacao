@@ -1,0 +1,26 @@
+Problem : Access to XMLHttpRequest at 'https://localhost:59953/api/lancamento/2014-08-18T21:11:54/1' from origin 'https://localhost:44442' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+
+Resolved :
+URL:  https://stackoverflow.com/questions/50949594/axios-having-cors-issue
+
+Axios({
+            method: 'post',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            url: 'https://localhost:44346/Order/Order/GiveOrder',
+            data: order
+          }).then(function (response) {
+            console.log(response.data);
+          });
+
+          e no backend (.net core): na inicialização:
+#region Allow-Orgin
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
+            #endregion
+e no controlador antes da ação
+
+[EnableCors("AllowOrigin")]          
+
