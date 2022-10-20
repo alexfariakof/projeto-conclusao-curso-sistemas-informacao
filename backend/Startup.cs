@@ -51,10 +51,11 @@ namespace backend
                 });
              });
 
-            // Configuração de Conexão com Bando de Dados
+            // Configuração de Conexão com Bando de Dados            
+            string connection = Configuration["EstacioMariaDbSqlConnection:MySqlConnectionString"];
             //string connection = Configuration["DefaultMySqlConnection:MySqlConnectionString"];
             //string connection = Configuration["MySqlConnection:MySqlConnectionString"];
-            string connection = Configuration["DockerMySqlConnection:MySqlConnectionString"];
+            //string connection = Configuration["DockerMySqlConnection:MySqlConnectionString"];
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connection));
             MigrateDatabase(connection);
             // Fim de configuração com banco de dados
@@ -175,15 +176,14 @@ namespace backend
         {
             try
             {
-                /*
+                
                 var evolveConnection = new MySql.Data.MySqlClient.MySqlConnection(connection);
                 var evolve = new Evolve.Evolve(evolveConnection, msg => Log.Information(msg))
                 {
                     Locations = new List<string> { "db/migrations", "db/dataset" },
                     IsEraseDisabled = true,
                 };
-                evolve.Migrate();
-                */
+                evolve.Migrate();                
             }
             catch (Exception ex)
             {
