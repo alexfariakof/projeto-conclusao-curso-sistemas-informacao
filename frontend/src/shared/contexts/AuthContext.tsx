@@ -27,6 +27,7 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
         }
         else{
             setAccessToken(undefined);
+            localStorage.clear();
         }
     }, []);
 
