@@ -6,8 +6,6 @@ import { Dashboard } from '../pages/Dashboard';
 import { Despesas } from '../pages/Despesas';
 import { Lancamentos } from '../pages/Lancamentos';
 import { Receitas } from '../pages/Receitas';
-import { PrimeiroAcesso } from '../pages/PrimeiroAcesso';
-
 
 export const AppRoutes = () => {
     const { toggleTheme } = useAppThemeContext();
@@ -47,10 +45,7 @@ export const AppRoutes = () => {
             <Route path='/categorias' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Categoria</Button>} />
             <Route path='/lancamentos' element={<Lancamentos />} />
             <Route path='/configuracoes' element={<Button variant='contained' color='primary' onClick={toggleTheme} >Configurações</Button>} />
-            <Route path='/sair' />
-            <Route path='/primeiro-acesso' element={<Navigate to='primeiro-acesso' />} />
             <Route path='/alterar-senha' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Aletar Senha</Button>} />
-            <Route path='/esqueci-senha' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Esqueci minha senha</Button>} />
             <Route path='/auth' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Login</Button>} />
             {<Route path='*' element={<Navigate to='pagina-inicial' />} />}
         </Routes>
