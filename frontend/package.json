@@ -21,6 +21,8 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.60",
+    "@unform/core": "^2.1.6",
+    "@unform/web": "^2.1.6",
     "axios": "^0.27.2",
     "chart.js": "^3.9.1",
     "dayjs": "^1.11.5",
@@ -32,8 +34,6 @@
     "react-scripts": "5.0.1",
     "typescript": "^4.8.3",
     "web-vitals": "^2.1.4",
-    "@unform/core": "^2.1.6",
-    "@unform/web": "^2.1.6",
     "yup": "^0.32.11"
   },
   "devDependencies": {

@@ -16,7 +16,7 @@ services:
       MYSQL_PASSWORD: docker
       MYSQL_DATABASE: DespesasPessoaisDB
     ports:
-      - "3308:3306"
+      - "3306:3306"
     networks:
       - despesas-network
 

@@ -1,0 +1,8 @@
+npm install @date-io/dayjs
+npm install dayjs --save
+npm i @unform/core
+npm i @unform/web
+npm i @mui/material
+npm i react-chartjs-2 chart.js
+npm install @faker-js/faker --save-dev
+npm install --save-dev @types/react@latest @types/react-dom@latest

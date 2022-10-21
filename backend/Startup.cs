@@ -53,6 +53,7 @@ namespace backend
 
             // Configuração de Conexão com Bando de Dados
             //string connection = Configuration["DefaultMySqlConnection:MySqlConnectionString"];
+            //string connection = Configuration["EstacioMariaDbSqlConnection:MySqlConnectionString"];
             //string connection = Configuration["MySqlConnection:MySqlConnectionString"];
             string connection = Configuration["DockerMySqlConnection:MySqlConnectionString"];
             services.AddDbContext<MySQLContext>(options => options.UseMySql(connection));
