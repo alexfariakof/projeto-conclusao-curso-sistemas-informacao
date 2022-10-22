@@ -3,9 +3,11 @@ using backend.Model.Context;
 using backend.Data.VO;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
+using MySql.Data.MySqlClient;
+using Serilog;
+using System.Collections.Generic;
 
 namespace backend.Repositorio.Implementations
 {
@@ -39,8 +41,10 @@ namespace backend.Repositorio.Implementations
 
                         _context.SaveChanges();
 
-                        string sql = "INSERT INTO[dbo].[ControleAcesso] ([login], [senha], [idUsuario]) VALUES (@login, @senha, @idUsuario)";
-                        _context.Database.ExecuteSqlCommand(sql, new SqlParameter("@login", usuario.Email), new SqlParameter("@senha", controleAcessoVO.Senha), new SqlParameter("@idUsuario", usuario.Id.Value));
+                        //string sql = "INSERT INTO[dbo].[ControleAcesso] ([login], [senha], [idUsuario]) VALUES (@login, @senha, @idUsuario)";
+                        string sql = "INSERT INTO ControleAcesso(`login`, `senha`, `idUsuario`) VALUES(@login, @senha, @idUsuario)";
+                        
+                        _context.Database.ExecuteSqlCommand(sql, new MySqlParameter("@login", usuario.Email), new MySqlParameter("@senha", controleAcessoVO.Senha), new MySqlParameter("@idUsuario", usuario.Id.Value));
 
                         dbContextTransaction.Commit();
                         return true;
@@ -82,7 +86,7 @@ namespace backend.Repositorio.Implementations
 
                         var senhaNova = Guid.NewGuid().ToString().Substring(0,8);
 
-                        _context.Database.ExecuteSqlCommand(sql, new SqlParameter("@senha", senhaNova), new SqlParameter("@login", usuario.Email));
+                        _context.Database.ExecuteSqlCommand(sql, new MySqlParameter("@senha", senhaNova), new MySqlParameter("@login", usuario.Email));
 
                         EnviarEmail(usuario, "<b>Nova senha:</b>" + senhaNova);
                         
