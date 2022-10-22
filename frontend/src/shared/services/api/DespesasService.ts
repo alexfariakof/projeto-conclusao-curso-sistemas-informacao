@@ -1,16 +1,16 @@
 import { Api } from "../axios-config";
 
 export interface IDespesaVO {
-    id:number;
-    idUsuario: Number;
-    idCategoria: Number;
-    data: string;
-    descricao: string;
-    valor: Number;
-    dataVencimento: string;
+    Id:number;
+    IdUsuario: Number;
+    IdCategoria: Number;
+    Data: string;
+    Descricao: string;
+    Valor: Number;
+    DataVencimento: string;
 }
 
-const getAll = async (): Promise<IDespesaVO | Error> => {
+const getAll = async (): Promise<IDespesaVO[] | Error> => {
     try {
         const { data } = await Api.get('/despesa');
         if (data) {
@@ -42,7 +42,7 @@ const create = async (dados: Omit<IDespesaVO, 'id'>): Promise<number | Error> =>
     try {
         const { data } = await Api.post<IDespesaVO>('/despesa', dados );
         if (data) {
-            return data.id
+            return data.Id
         }
 
         return Error('Erro ao criar novo registro de despesas.');
@@ -52,10 +52,9 @@ const create = async (dados: Omit<IDespesaVO, 'id'>): Promise<number | Error> =>
     }
 };
 
-
 const updateById = async (id: number, dados: IDespesaVO): Promise<IDespesaVO | Error> => {
     try {
-        dados.id = id;
+        dados.Id = id;
         const { data } = await Api.put<IDespesaVO>('/despesa', dados);
         if (data) {
             return data
@@ -71,7 +70,7 @@ const updateById = async (id: number, dados: IDespesaVO): Promise<IDespesaVO | E
 
 const deleteById = async (id: number): Promise<void | Error> => { 
     try {
-        const { data } = await Api.delete('/despesa/${id}');
+        const { data } = await Api.delete('/despesa/$(id)');
         if (data) {
             return data.id
         }

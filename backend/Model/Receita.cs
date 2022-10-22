@@ -7,7 +7,7 @@ namespace backend.Model
     {
         public int IdUsuario { get; set; }
         public int IdCategoria { get; set; }
-        public DateTime data { get; set; }
+        public DateTime Data { get; set; }
         public String Descricao { get; set; }
         public Decimal Valor { get; set; }
     }

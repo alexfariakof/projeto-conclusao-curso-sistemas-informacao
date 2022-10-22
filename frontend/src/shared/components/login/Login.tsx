@@ -8,7 +8,6 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useState } from "react";
 import Modal from '@mui/material/Modal';
 import SaveIcon from '@mui/icons-material/Save';
-import { ControleAcessoVO } from "../../services/api";
 
 interface ILoginProps {
     children: React.ReactNode;

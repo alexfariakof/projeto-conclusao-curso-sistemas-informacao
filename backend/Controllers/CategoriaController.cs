@@ -17,7 +17,6 @@ namespace backend.Controllers
             _categoriaBusiness = categoriaBusiness;
         }
 
-        [EnableCors("AllowOrigin")]
         [HttpGet]
         public IActionResult Get()
         {
