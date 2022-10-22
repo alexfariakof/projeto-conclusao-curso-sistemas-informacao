@@ -47,8 +47,8 @@ namespace backend.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("RecoveryPassword")]
-        public IActionResult RecoveryPassword([FromBody]  string email)
+        [HttpGet("RecoveryPassword/{email}")]
+        public IActionResult RecoveryPassword([FromRoute]  string email)
         {
             if (!string.IsNullOrWhiteSpace(email) && !string.IsNullOrEmpty(email))
                 if (_controleAcessoBusiness.RecoveryPassword(email))
