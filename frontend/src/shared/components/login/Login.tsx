@@ -8,6 +8,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useState } from "react";
 import Modal from '@mui/material/Modal';
 import SaveIcon from '@mui/icons-material/Save';
+import { ControleAcessoVO } from "../../services/api";
 
 interface ILoginProps {
     children: React.ReactNode;
@@ -21,7 +22,8 @@ interface State {
 
 
 export const Login: React.FC<ILoginProps> = ({ children }) => {
-    const { isAuthenticated, login } = useAuthContext();
+    const { isAuthenticated, login, recoveryPassword, createUsuario } = useAuthContext();
+    const avatarStyle = { backgroundColor: '#1bbd7e' }
 
     const [values, setValues] = useState<State>({
         email: '',
@@ -29,18 +31,37 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
         showPassword: false,
     });
 
-    const [valuesCPassword, setValuesCpassword] = useState<State>({
+
+    interface IPrimeiroAcesso {
+        nome: string;
+        telefone: string;
+        email: string;
+        password: string
+        showPassword: boolean;
+        cPassword: string;        
+        showCPassword: boolean;
+
+    }     
+
+    const [valuesPA, setValuesPA] = useState<IPrimeiroAcesso>({
+        nome: '',
+        telefone: '',
         email: '',
-        password: '',
+        password:'',        
         showPassword: false,
+        cPassword:'',        
+        showCPassword: false,
     });
 
+    
 
+    const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValues({ ...values, [prop]: event.target.value });
+    };
 
-    const handleChange =
-        (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-            setValues({ ...values, [prop]: event.target.value });
-        };
+    const handleChangePA = (prop: keyof IPrimeiroAcesso) => (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValuesPA({ ...valuesPA, [prop]: event.target.value });
+    };
 
     const handleClickShowPassword = () => {
         setValues({
@@ -53,18 +74,6 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
         event.preventDefault();
     };
 
-    const handleChangeCPassword =
-        (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-            setValuesCpassword({ ...valuesCPassword, [prop]: event.target.value });
-        };
-
-    const handleClickShowCPassword = () => {
-        setValuesCpassword({
-            ...valuesCPassword,
-            showPassword: !valuesCPassword.showPassword,
-        });
-    }
-
     const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         event.preventDefault();
         if (event.key === 'Enter') {
@@ -72,38 +81,51 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
         }
     }
 
-    const handlePAClickShowPassword = () => {
-        setValues({
-            ...values,
-            showPassword: !values.showPassword,
+    const handleClickShowPAPassword = () => {
+        setValuesPA({
+            ...valuesPA,
+            showPassword: !valuesPA.showPassword,
         });
     };
 
-    const handlePAClickShowCPassword = () => {
-        setValuesCpassword({
-            ...valuesCPassword,
-            showPassword: !valuesCPassword.showPassword,
+    const handleClickShowPACPassword = () => {
+        setValuesPA({
+            ...valuesPA,
+            showCPassword: !valuesPA.showCPassword,
         });
     };
 
-    const handleMouseDownCPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
-    };
-
+  
 
     const handleSubmit = () => {
         login(values.email, values.password);
+    }
+
+    const handleSubmitRecoveryPassword = () => {
+        recoveryPassword(values.email);
+        
+    } 
+
+    const handleSubimitCreateUsuario = () => {
+        createUsuario(valuesPA.nome, valuesPA.telefone, valuesPA.email, valuesPA.password).then(() => {
+            valuesPA.nome = '';
+            valuesPA.telefone = '';
+            valuesPA.email = '';
+            valuesPA.password = '';
+            valuesPA.showPassword = false;
+            valuesPA.cPassword = '';
+            valuesPA.showCPassword = false;
+            alert('Usuário cadastrado com sucesso!');
+            handlePrimeiroAcessoClose();
+        });        
     }
 
     const [openPrimeiroAcesso, setPrimeiroAcessoOpen] = useState(false);
     const [openEsqueciSenha, setEsqueciSenhaOpen] = useState(false);
     const handlePrimeiroAcessoOpen = () => { setPrimeiroAcessoOpen(true); };
     const handlePrimeiroAcessoClose = () => setPrimeiroAcessoOpen(false);
-    const handleEsqueciSenhaOpen = () => { setEsqueciSenhaOpen(true); };
+    const handleEsqueciSenhaOpen = () => { handleSubmitRecoveryPassword(); setEsqueciSenhaOpen(true); };
     const handleEsqueciSenhaClose = () => setEsqueciSenhaOpen(false);
-
-    const avatarStyle = { backgroundColor: '#1bbd7e' }
-
 
     if (isAuthenticated) {
         return (<>{children}</>);
@@ -219,25 +241,37 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
                         alignItems="start"
                         component={Paper} >
 
-                        <TextField size="small" label="Nome" inputProps={{ maxLength: 50 }} fullWidth />
-                        <TextField size="small" label='Telefone' inputProps={{ maxLength: 15, type: 'tel' }} fullWidth />
-                        <TextField size="small" label='Email' inputProps={{ maxLength: 50, type: 'email' }} fullWidth />
+                        <TextField size="small" label="Nome" inputProps={{ maxLength: 50 }} fullWidth
+                            value={valuesPA.nome}
+                            onChange={handleChangePA('nome')}
+                            onKeyUp={handleKeyPress}
+                        />
+                        <TextField size="small" label='Telefone' inputProps={{ maxLength: 15, type: 'tel' }} fullWidth 
+                            value={valuesPA.telefone}
+                            onChange={handleChangePA('telefone')}
+                            onKeyUp={handleKeyPress}                       
+                        />
+                        <TextField size="small" label='Email' inputProps={{ maxLength: 50, type: 'email' }} fullWidth
+                            value={valuesPA.email}
+                            onChange={handleChangePA('email')}
+                            onKeyUp={handleKeyPress}                       
+                         />
                         <FormControl size="small" fullWidth variant="outlined" >
-                            <InputLabel htmlFor="txtPassword">Senha</InputLabel>
+                            <InputLabel htmlFor="txtPAPassword">Senha</InputLabel>
                             <OutlinedInput
-                                id="txtPassword"
-                                type={values.showPassword ? 'text' : 'password'}
-                                value={values.password}
-                                onChange={handleChange('password')}
+                                id="txtPAPassword"
+                                type={valuesPA.showPassword ? 'text' : 'password'}
+                                value={valuesPA.password}
+                                onChange={handleChangePA('password')}
                                 endAdornment={
                                     <InputAdornment position="end">
                                         <IconButton
                                             aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
+                                            onClick={handleClickShowPAPassword}
                                             onMouseDown={handleMouseDownPassword}
                                             edge="end"
                                         >
-                                            {values.showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                                            {valuesPA.showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
                                         </IconButton>
                                     </InputAdornment>
                                 }
@@ -249,18 +283,18 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
                             <InputLabel htmlFor="txtConfirmPassword">Confirma Senha</InputLabel>
                             <OutlinedInput
                                 id="txtConfirmPassword"
-                                type={valuesCPassword.showPassword ? 'text' : 'password'}
-                                value={valuesCPassword.password}
-                                onChange={handleChangeCPassword('password')}
+                                type={valuesPA.showCPassword ? 'text' : 'password'}
+                                value={valuesPA.cPassword}
+                                onChange={handleChangePA('cPassword')}
                                 endAdornment={
                                     <InputAdornment position="end">
                                         <IconButton
                                             aria-label="toggle password visibility"
-                                            onClick={handleClickShowCPassword}
-                                            onMouseDown={handleMouseDownCPassword}
+                                            onClick={handleClickShowPACPassword}
+                                            onMouseDown={handleMouseDownPassword}
                                             edge="end"
                                         >
-                                            {valuesCPassword.showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                                            {valuesPA.showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
                                         </IconButton>
                                     </InputAdornment>
                                 }
@@ -268,7 +302,7 @@ export const Login: React.FC<ILoginProps> = ({ children }) => {
                                 inputProps={{ maxLength: 50 }}
                             />
                         </FormControl>
-                        <Button color='primary' disableElevation variant='contained' startIcon={<SaveIcon />} >Salvar</Button>
+                        <Button color='primary' disableElevation variant='contained' startIcon={<SaveIcon />} onClick={handleSubimitCreateUsuario} >Salvar</Button>
                     </Box>
                 </Modal>
             </Box>
