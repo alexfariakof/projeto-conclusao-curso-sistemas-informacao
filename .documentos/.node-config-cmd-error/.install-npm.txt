@@ -6,3 +6,5 @@ npm i @mui/material
 npm i react-chartjs-2 chart.js
 npm install @faker-js/faker --save-dev
 npm install --save-dev @types/react@latest @types/react-dom@latest
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material

@@ -90,7 +90,7 @@ export const MenuLateral: React.FC<React.PropsWithChildren> = ({ children }) => 
                             />
                             <ListItemLink
                                 icon='logout'
-                                to='sair'
+                                to=''
                                 label='Sair'
                                 onClick={() => logout()}
                             />
