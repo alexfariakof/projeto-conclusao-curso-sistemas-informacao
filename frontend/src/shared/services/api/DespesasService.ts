@@ -1,13 +1,14 @@
+import { Dayjs } from "dayjs";
 import { Api } from "../axios-config";
 
 export interface IDespesaVO {
     Id:number;
     IdUsuario: Number;
     IdCategoria: Number;
-    Data: string;
+    Data: Dayjs | null;
     Descricao: string;
     Valor: Number;
-    DataVencimento: string;
+    DataVencimento: Dayjs | null;
 }
 
 const getAll = async (): Promise<IDespesaVO[] | Error> => {
