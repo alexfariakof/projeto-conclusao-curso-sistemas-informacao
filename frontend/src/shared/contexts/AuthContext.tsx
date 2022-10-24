@@ -1,7 +1,6 @@
 import { createContext, useCallback, useState, useContext, useMemo, useEffect } from 'react';
 import { AuthService, ControleAcessoVO } from '../services/api';
 
-
 interface IAuthContextData {
     isAuthenticated: boolean;
     logout: () => void;
@@ -26,7 +25,6 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
             setAccessToken(JSON.parse(accessToken));
         }
         else{
-            setAccessToken(undefined);
             localStorage.clear();
         }
     }, []);
@@ -35,11 +33,11 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
         const result = await AuthService.auth(email, password);
         if (result instanceof Error){
             return result.message;
-        }
-        else{
-            //tratar result vindo como undefined
-            localStorage.setItem('@dpApiAccess', JSON.stringify(result.accessToken));
-            setAccessToken(result);
+        }   
+        else if (result.authenticated === true) {
+            localStorage.setItem('idUsuario', result.usuario.id);
+            localStorage.setItem('@dpApiAccess', JSON.stringify(result.accessToken));   
+            setAccessToken(result);           
         }
 
     }, []);
