@@ -42,7 +42,9 @@ export const AppRoutes = () => {
             <Route path='/despesas' element={<Despesas />} />
             <Route path='/despesas/:id' element={<Despesas />} />
             <Route path='/receitas' element={<Receitas />} />
+            <Route path='/receitas/:id' element={<Receitas />} />
             <Route path='/categorias' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Categoria</Button>} />
+            <Route path='/categorias/:id' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Categoria</Button>} />
             <Route path='/lancamentos' element={<Lancamentos />} />
             <Route path='/configuracoes' element={<Button variant='contained' color='primary' onClick={toggleTheme} >Configurações</Button>} />
             <Route path='/alterar-senha' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Aletar Senha</Button>} />
