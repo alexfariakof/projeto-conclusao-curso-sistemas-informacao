@@ -97,7 +97,7 @@ namespace backend.Business.Implementations
             Usuario usuario = _repositorio.GetUsuarioByEmail(login);
             return new
             {
-                autenticated = true,
+                authenticated = true,
                 created = createDate.ToString("yyyy-MM-dd HH:mm:ss"),
                 expiration = expirationDate.ToString("yyyy-MM-dd HH:mm:ss"),
                 accessToken = token,
