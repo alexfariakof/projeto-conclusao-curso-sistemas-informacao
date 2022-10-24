@@ -13,6 +13,7 @@ namespace backend.Data.Implementations
             return new Lancamento
             {
                 Id = origin.Id,
+                Tipo = origin.Tipo,
                 IdDespesa = origin.IdDespesa,
                 IdReceita = origin.IdReceita,
                 IdUsuario = origin.IdUsuario,
@@ -29,6 +30,7 @@ namespace backend.Data.Implementations
             return new LancamentoVO
             {
                 Id = origin.Id.Value,
+                Tipo = origin.Tipo,
                 IdDespesa = origin.IdDespesa,
                 IdReceita = origin.IdReceita,
                 IdUsuario = origin.IdUsuario,

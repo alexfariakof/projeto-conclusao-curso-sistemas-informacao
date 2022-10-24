@@ -66,7 +66,7 @@ export const Usuarios = () => {
         <LayoutMasterPage titulo='Primeiro Acesso'  >
             <Box
                 gap={1}                
-                margin={2}
+                margin={1}
                 padding={1}
                 paddingX={2}                
                 height="100%"

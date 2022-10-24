@@ -3,6 +3,7 @@ import { Api } from "../axios-config";
 export interface ILancamentoVO {
     id: number;
     idUsuario: number;
+    tipo: string;
     idDespesa: number;
     idReceita: number;
     valor: number;

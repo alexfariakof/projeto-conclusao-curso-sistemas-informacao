@@ -25,16 +25,16 @@ namespace backend.Repositorio.Implementations
             //Mysql  CONV(SUBSTRING(uuid(), 4, 4), 16, 10) as id
             //SqlServer ABS(Checksum(NewId()) %10000) as id
             string sql = "Select cast(CONV(SUBSTRING(uuid(), 4, 4), 16, 10) as UNSIGNED) as id, lancamentos.* From ( " + 
-                         "Select d.idUsuario, data, idCategoria, valor*-1 as valor, d.id as idDespesa, 0 as idReceita, d.descricao, c.descricao as categoria " +
+                         "Select d.idUsuario, data, idCategoria, valor*-1 as valor, 'Despesas' as Tipo, d.id as idDespesa, 0 as idReceita, d.descricao, c.descricao as categoria " +
                          "  FROM Despesa d " +
                          " Inner Join Categoria c on d.idCategoria = c.id " +
                          " where d.idUsuario = @idUsuario " +
                          "   and Month(data) = @mes " +
                          "   and  Year(data) = @ano " +
                          " union " +
-                         "Select r.idUsuario, data, idCategoria, valor,0 as idDespesa, r.id as idReceita, r.descricao, c.descricao as categoria " +
+                         "Select r.idUsuario, data, idCategoria, valor, 'Receitas' as Tipo, 0 as idDespesa, r.id as idReceita, r.descricao, cr.descricao as categoria " +
                          "  FROM Receita r " +
-                         " Inner Join Categoria c on r.idCategoria = c.id " +
+                         " Inner Join Categoria cr on r.idCategoria = cr.id " +
                          " where r.idUsuario = @idUsuario " +
                          "   and Month(data) = @mes " +
                          "   and  Year(data) = @ano " +

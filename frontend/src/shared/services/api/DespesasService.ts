@@ -1,14 +1,14 @@
-import { Dayjs } from "dayjs";
 import { Api } from "../axios-config";
+import { Dayjs } from "dayjs";
 
 export interface IDespesaVO {
-    Id:number;
-    IdUsuario: Number;
-    IdCategoria: Number;
-    Data: Dayjs | null;
-    Descricao: string;
-    Valor: Number;
-    DataVencimento: Dayjs | null;
+    id:number;
+    idUsuario: number;
+    idCategoria: number;
+    data: Dayjs | null;
+    descricao: string;
+    valor: number;
+    dataVencimento: Dayjs | null;
 }
 
 const getAll = async (): Promise<IDespesaVO[] | Error> => {
@@ -25,11 +25,11 @@ const getAll = async (): Promise<IDespesaVO[] | Error> => {
     }
 };
 
-const getById = async (id: Number): Promise<IDespesaVO | Error> => {
+const getById = async (id: number): Promise<IDespesaVO | Error> => {
     try {
-        const { data } = await Api.get('/despesa/$(id)');
+        const { data } = await Api.get('/despesa/' + id);
         if (data) {
-            return data;
+            return data.despesa as IDespesaVO;
         }
 
         return Error('Erro ao pesquisar despesas.');
@@ -39,11 +39,11 @@ const getById = async (id: Number): Promise<IDespesaVO | Error> => {
     }
 };
 
-const create = async (dados: Omit<IDespesaVO, 'id'>): Promise<number | Error> => {
+const create = async (dados: Omit<IDespesaVO, 'id'>): Promise<any | Error> => {
     try {
         const { data } = await Api.post<IDespesaVO>('/despesa', dados );
         if (data) {
-            return data.Id
+            return data;
         }
 
         return Error('Erro ao criar novo registro de despesas.');
@@ -55,7 +55,7 @@ const create = async (dados: Omit<IDespesaVO, 'id'>): Promise<number | Error> =>
 
 const updateById = async (id: number, dados: IDespesaVO): Promise<IDespesaVO | Error> => {
     try {
-        dados.Id = id;
+        dados.id = id;
         const { data } = await Api.put<IDespesaVO>('/despesa', dados);
         if (data) {
             return data
@@ -69,11 +69,11 @@ const updateById = async (id: number, dados: IDespesaVO): Promise<IDespesaVO | E
 
  };
 
-const deleteById = async (id: number): Promise<void | Error> => { 
+const deleteById = async (id: number): Promise<any | Error> => { 
     try {
-        const { data } = await Api.delete('/despesa/$(id)');
-        if (data) {
-            return data.id
+        const { data } = await Api.delete('/despesa/'+ id);
+        if (data.message === true) {
+            return Boolean(data.message);
         }
 
         return Error('Erro ao deletar registro de despesas.');

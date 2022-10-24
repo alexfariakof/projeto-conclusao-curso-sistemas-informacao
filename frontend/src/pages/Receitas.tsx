@@ -1,53 +1,143 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Box, Button, FormControl, InputAdornment, InputLabel, OutlinedInput, Paper, TextField } from "@mui/material";
-import { LayoutMasterPage } from "../shared/layouts";
-import { Save } from '@mui/icons-material';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import Stack from '@mui/material/Stack';
+import { Save } from '@mui/icons-material';
 import dayjs, { Dayjs } from 'dayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers';
-import Stack from '@mui/material/Stack';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { BarraFerramentas } from '../shared/components';
+import { LayoutMasterPage } from "../shared/layouts";
+import { ReceitasService, IReceitaVO } from '../shared/services/api';
 
 interface State {
-    amount: string;
+    idUsuario: number;
+    idCategoria: string;
+    data: Dayjs | null;
+    descricao: string;
+    valor: number;        
 }
-export const Receitas = () => {
+
+export const Receitas: React.FC = () => {
+    const navigate = useNavigate();
+    const { id = 0 } = useParams<'id'>();
     const [values, setValues] = useState<State>({
-        amount: '',
+        idUsuario: 0,
+        valor: 0,
+        descricao: '',
+        idCategoria: '0',
+        data: dayjs('2014-08-18T21:11:54'),
     });
-
-    const [categoria, setCategoria] = useState('');
-
-    const [valueData, setValueData] = useState<Dayjs | null>(
-        dayjs('2014-08-18T21:11:54'),
-    );
-
 
     const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
         setValues({ ...values, [prop]: event.target.value });
     };
 
     const handleChangeCategoria = (event: SelectChangeEvent) => {
-        setCategoria(event.target.value);
+        setValues({ ...values, idCategoria: event.target.value});
     };
 
     const handleChangeData = (newValue: Dayjs | null) => {
-        setValueData(newValue);
+        setValues({...values, data: newValue })
     };
 
+    const handleSave = () => {
+        let dados: IReceitaVO;
+        dados = {
+            id: Number(id),
+            idUsuario: Number(localStorage.getItem('idUsuario')),
+            idCategoria: Number(values.idCategoria),
+            data: values.data,
+            descricao: values.descricao,
+            valor: values.valor,
+        };
+
+        if (id === 0) {
+            ReceitasService
+                .create(dados)
+                .then((result) => {
+                    if (result instanceof Error) {
+                        alert(result.message);
+                    } 
+                    else {
+                        if (dados.id === 0 && result.message === true) {
+                            alert('recetitaesa cadastrada com sucesso!');
+                            handleClear();
+                        }
+                        else {
+                            alert('recetitaesa atualizada com sucesso!');
+                            navigate(`/lancamentos`);
+                        }
+                    }
+                });
+        } else {
+            ReceitasService
+                .updateById(Number(id), dados)
+                .then((result) => {
+                    if (result instanceof Error) {
+                        alert(result.message);
+                    } else {
+                        if (true) {
+                            navigate('/Receitas');
+                        }
+                    }
+                });
+        }
+    }
+
+    const handleEdit = (recetita: IReceitaVO)  => {
+        
+        setValues({
+            idUsuario: recetita.idUsuario,
+            idCategoria: recetita.idCategoria.toString(),
+            data: recetita.data,
+            descricao: recetita.descricao,
+            valor: recetita.valor       
+        });
+
+    }
+
+    const handleClear = () => {
+        setValues({
+            ...values,
+            idCategoria: '0',
+            data: dayjs('2014-08-18T21:11:54'),
+            descricao: '',
+            valor: 0                
+        });
+    }
+
+    useEffect(() => {
+        if (id !== 0) {
+            ReceitasService.getById(Number(id))
+                .then((result) => {
+                    if (result instanceof Error) {
+                        alert(result.message);
+                    }
+                    else {
+                        handleEdit(result);
+                        console.log(result.id);
+                    }
+                });
+        }
+    }, [id])
+
     return (
-        <LayoutMasterPage 
-        titulo='Receitas' 
-        barraDeFerramentas={(
-            <BarraFerramentas  />
-          )}
+
+        <LayoutMasterPage
+            titulo='Receitas'
+            barraDeFerramentas={(
+                <BarraFerramentas
+                    btnVoltar onClickVoltar={() => navigate('/Receitas/voltar')}
+                    btnNovo onClickNovo={() => navigate('/Receitas/0')} />
+            )}
         >
             <Box
                 gap={1}
-                margin={2}
+                margin={1}
                 padding={1}
                 paddingX={2}
                 height="100%"
@@ -55,23 +145,23 @@ export const Receitas = () => {
                 flexDirection="column"
                 alignItems="start"
                 component={Paper} >
-
                 <FormControl size="small" fullWidth  >
                     <InputLabel id="txtCategoria">Categoria</InputLabel>
                     <Select
                         labelId="txtCategoria"
-                        id="txtReceita"
-                        value={categoria}
+                        id="txtCategoria"
+                        value={values.idCategoria}
                         label="Categoria"
                         onChange={handleChangeCategoria}
                     >
-                        <MenuItem value="">
+                        <MenuItem value={0}>
                             <em>None</em>
-                        </MenuItem>
-                        <MenuItem value={10}>Alimentação</MenuItem>
-                        <MenuItem value={20}>Educação</MenuItem>
-                        <MenuItem value={30}>Transporte</MenuItem>
-                        <MenuItem value={30}>Lazer</MenuItem>
+                        </MenuItem>                        
+                        <MenuItem value={1}>Salário</MenuItem>
+                        <MenuItem value={2}>Prêmio</MenuItem>
+                        <MenuItem value={3}>Investimento</MenuItem>
+                        <MenuItem value={4}>Benefício</MenuItem>
+                        <MenuItem value={5}>Outro</MenuItem>
                     </Select>
                 </FormControl>
                 <FormControl size="small" fullWidth  >
@@ -79,21 +169,24 @@ export const Receitas = () => {
                         <Stack spacing={3} >
                             <DesktopDatePicker
                                 label="Data"
-                                inputFormat="MM/DD/YYYY"
-                                value={valueData}
+                                inputFormat="DD/MM/YYYY"
+                                value={values.data}
                                 onChange={handleChangeData}
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </Stack>
                     </LocalizationProvider>
                 </FormControl>
-                <TextField size="small" label="Descrição" inputProps={{ maxLength: 50 }} fullWidth />
+                <TextField size="small" label="Descrição" inputProps={{ maxLength: 50 }} fullWidth
+                    value={values.descricao}
+                    onChange={handleChange('descricao')}
+                />
                 <FormControl size="small" fullWidth variant="outlined" >
                     <InputLabel htmlFor="txtValor">Valor</InputLabel>
                     <OutlinedInput
                         id="txtValor"
-                        value={values.amount}
-                        onChange={handleChange('amount')}
+                        value={values.valor}
+                        onChange={handleChange('valor')}
                         startAdornment={<InputAdornment position="start">R$</InputAdornment>}
                         label="Valor"
                         type="number"
@@ -104,6 +197,8 @@ export const Receitas = () => {
                     disableElevation
                     variant='contained'
                     startIcon={<Save />}
+                    type='submit'
+                     onClick={handleSave}
                 >Salvar</Button>
             </Box>
         </LayoutMasterPage>

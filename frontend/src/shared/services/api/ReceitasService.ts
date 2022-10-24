@@ -1,12 +1,13 @@
 import { Api } from "../axios-config";
+import { Dayjs } from "dayjs";
 
 export interface IReceitaVO {
-    Id:number;
-    IdUsuario: Number;
-    IdCategoria: Number;
-    Data: string;
-    Descricao: string;
-    Valor: Number;
+    id:number;
+    idUsuario: number;
+    idCategoria: Number;
+    data: Dayjs | null;
+    descricao: string;
+    valor: number;
 }
 
 const getAll = async (): Promise<IReceitaVO[] | Error> => {
@@ -25,9 +26,9 @@ const getAll = async (): Promise<IReceitaVO[] | Error> => {
 
 const getById = async (id: Number): Promise<IReceitaVO | Error> => {
     try {
-        const { data } = await Api.get('/Receita/$(id)');
+        const { data } = await Api.get('/Receita/' + id);
         if (data) {
-            return data;
+            return data.receita as IReceitaVO;
         }
 
         return Error('Erro getById ao pesquisar receitas.');
@@ -37,11 +38,11 @@ const getById = async (id: Number): Promise<IReceitaVO | Error> => {
     }
 };
 
-const create = async (dados: Omit<IReceitaVO, 'id'>): Promise<number | Error> => {
+const create = async (dados: Omit<IReceitaVO, 'id'>): Promise<any | Error> => {
     try {
         const { data } = await Api.post<IReceitaVO>('/Receita', dados );
         if (data) {
-            return data.Id
+            return data.id
         }
 
         return Error('Erro ao criar novo registro de receita.');
@@ -54,7 +55,7 @@ const create = async (dados: Omit<IReceitaVO, 'id'>): Promise<number | Error> =>
 
 const updateById = async (id: number, dados: IReceitaVO): Promise<IReceitaVO | Error> => {
     try {
-        dados.Id = id;
+        dados.id = id;
         const { data } = await Api.put<IReceitaVO>('/Receita', dados);
         if (data) {
             return data
@@ -68,11 +69,11 @@ const updateById = async (id: number, dados: IReceitaVO): Promise<IReceitaVO | E
 
  };
 
-const deleteById = async (id: number): Promise<void | Error> => { 
+const deleteById = async (id: number): Promise<any | Error> => { 
     try {
-        const { data } = await Api.delete('/Receita/$(id)');
-        if (data) {
-            return data.id
+        const { data } = await Api.delete('/Receita/' + id);
+        if (data.message) {
+            return Boolean(data)
         }
 
         return Error('Erro ao deletar registro de receita.');

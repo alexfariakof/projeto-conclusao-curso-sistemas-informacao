@@ -50,20 +50,16 @@ export const Despesas: React.FC = () => {
         setValues({...values, dtVencimento: newValue })
     };
 
-    const isSaveAndClose = () => {
-        return true;
-    }
-
     const handleSave = () => {
         let dados: IDespesaVO;
         dados = {
-            Id: Number(id),
-            IdUsuario: values.idUsuario ,
-            IdCategoria: Number(values.idCategoria),
-            Data: values.data,
-            Descricao: values.descricao,
-            Valor: values.valor,
-            DataVencimento: values.dtVencimento
+            id: Number(id),
+            idUsuario: Number(localStorage.getItem('idUsuario')),
+            idCategoria: Number(values.idCategoria),
+            data: values.data,
+            descricao: values.descricao,
+            valor: values.valor,
+            dataVencimento: values.dtVencimento
         };
 
         if (id === 0) {
@@ -74,11 +70,13 @@ export const Despesas: React.FC = () => {
                         alert(result.message);
                     } 
                     else {
-                        if (isSaveAndClose()) {
-                            navigate('/despesas');
-                        } 
+                        if (dados.id === 0 && result.message === true) {
+                            alert('Despesa cadastrada com sucesso!');
+                            handleClear();
+                        }
                         else {
-                            navigate(`/lancamentos/${result}`);
+                            alert('Despesa atualizada com sucesso!');
+                            navigate(`/lancamentos`);
                         }
                     }
                 });
@@ -89,12 +87,36 @@ export const Despesas: React.FC = () => {
                     if (result instanceof Error) {
                         alert(result.message);
                     } else {
-                        if (isSaveAndClose()) {
+                        if (true) {
                             navigate('/despesas');
                         }
                     }
                 });
         }
+    }
+
+    const handleEdit = (desp: IDespesaVO)  => {
+        
+        setValues({
+            idUsuario: desp.idUsuario,
+            idCategoria: desp.idCategoria.toString(),
+            data: desp.data,
+            descricao: desp.descricao,
+            dtVencimento: desp.dataVencimento,
+            valor: desp.valor       
+        });
+
+    }
+
+    const handleClear = () => {
+        setValues({
+            ...values,
+            idCategoria: '0',
+            data: dayjs('2014-08-18T21:11:54'),
+            descricao: '',
+            dtVencimento: dayjs('2014-08-18T21:11:54'), 
+            valor: 0                
+        });
     }
 
     useEffect(() => {
@@ -103,18 +125,13 @@ export const Despesas: React.FC = () => {
                 .then((result) => {
                     if (result instanceof Error) {
                         alert(result.message);
-                        navigate('/despesas');
                     }
                     else {
-
-                        console.log(result.Id);
+                        handleEdit(result);
+                        console.log(result.id);
                     }
                 });
         }
-        else {
-
-        }
-
     }, [id])
 
     return (
@@ -129,7 +146,7 @@ export const Despesas: React.FC = () => {
         >
             <Box
                 gap={1}
-                margin={2}
+                margin={1}
                 padding={1}
                 paddingX={2}
                 height="100%"
@@ -137,7 +154,6 @@ export const Despesas: React.FC = () => {
                 flexDirection="column"
                 alignItems="start"
                 component={Paper} >
-                {id}
                 <FormControl size="small" fullWidth  >
                     <InputLabel id="txtCategoria">Categoria</InputLabel>
                     <Select
@@ -165,7 +181,7 @@ export const Despesas: React.FC = () => {
                         <Stack spacing={3} >
                             <DesktopDatePicker
                                 label="Data"
-                                inputFormat="MM/DD/YYYY"
+                                inputFormat="DD/MM/YYYY"
                                 value={values.data}
                                 onChange={handleChangeData}
                                 renderInput={(params) => <TextField {...params} />}
@@ -182,7 +198,7 @@ export const Despesas: React.FC = () => {
                         <Stack spacing={3} >
                             <DesktopDatePicker
                                 label="Data de Vencimento"
-                                inputFormat="MM/DD/YYYY"
+                                inputFormat="DD/MM/YYYY"
                                 value={values.dtVencimento}
                                 onChange={handleChangeDataVencimento}
                                 renderInput={(params) => <TextField {...params} />}

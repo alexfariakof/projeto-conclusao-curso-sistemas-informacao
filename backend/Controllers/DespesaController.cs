@@ -76,7 +76,7 @@ namespace backend.Controllers
         public IActionResult Delete(int id)
         {
             _despesaBusiness.Delete(id);
-            return NoContent();
+            return new ObjectResult(new { message = true });
         }
     }
 }

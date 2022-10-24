@@ -6,6 +6,7 @@ namespace backend.Data.VO
     {
         public int Id { get; set; }
         public int IdUsuario { get; set; }
+        public String Tipo { get; set; }
         public int IdDespesa { get; set; }
         public int IdReceita { get; set; }
         public String Valor { get; set; }

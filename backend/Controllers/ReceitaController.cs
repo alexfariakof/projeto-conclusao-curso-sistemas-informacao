@@ -74,11 +74,11 @@ namespace apiReceitasPessoais.Controllers
         }
 
         //[Authorize("Bearer")]
-        [HttpDelete("{id}")]        
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             _receitaBusiness.Delete(id);
-            return NoContent();
+            return new ObjectResult(new { message = true });
         }
     }
 }
