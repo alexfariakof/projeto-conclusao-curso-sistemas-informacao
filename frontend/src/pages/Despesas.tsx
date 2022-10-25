@@ -135,13 +135,15 @@ export const Despesas: React.FC = () => {
     }, [id])
 
     return (
-
         <LayoutMasterPage
             titulo='Despesas'
             barraDeFerramentas={(
                 <BarraFerramentas
+                    isOpenTxtBusca={true}
                     btnVoltar onClickVoltar={() => navigate('/despesas/voltar')}
-                    btnNovo onClickNovo={() => navigate('/despesas/0')} />
+                    btnNovo onClickNovo={() => navigate('/despesas/0')} 
+                    btnSalvar onClickSalvar={() => handleSave() }
+                    />
             )}
         >
             <Box
@@ -164,7 +166,7 @@ export const Despesas: React.FC = () => {
                         onChange={handleChangeCategoria}
                     >
                         <MenuItem value={0}>
-                            <em>None</em>
+                            <em>Nenhuma Categoria Selecionada</em>
                         </MenuItem>
                         <MenuItem value={1}>Alimentação</MenuItem>
                         <MenuItem value={2}>Casa</MenuItem>
@@ -217,14 +219,6 @@ export const Despesas: React.FC = () => {
                         type="number"
                     />
                 </FormControl>
-                <Button
-                    color='primary'
-                    disableElevation
-                    variant='contained'
-                    startIcon={<Save />}
-                    type='submit'
-                     onClick={handleSave}
-                >Salvar</Button>
             </Box>
         </LayoutMasterPage>
     );

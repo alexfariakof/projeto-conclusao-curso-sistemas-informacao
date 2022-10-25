@@ -1,0 +1,7 @@
+heroku login
+docker ps
+heroku container:login
+heroku 956e2575cc18:push web --app api-despesas-anyware
+heroku 956e2575cc18:release web --app api-despesas-anyware
+
+heroku logs --tail --app api-despesas-anyware

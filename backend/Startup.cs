@@ -72,7 +72,7 @@ namespace backend
                 c.SwaggerDoc("v1",
                     new Info
                     {
-                        Title = "API REST Despesas Pessoais",
+                        Title = "API REST Despesas Inteligente",
                         Version = "v1"
                     });
 
@@ -111,7 +111,7 @@ namespace backend
             app.UseSwaggerUI(c =>
             {
                 string swaggerJsonBasePath = string.IsNullOrWhiteSpace(c.RoutePrefix) ? "." : "..";
-                c.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "API Despesas Pessoais V1");
+                c.SwaggerEndpoint($"{swaggerJsonBasePath}/swagger/v1/swagger.json", "API Despesas Inteligente V2");
             });
 
             //Starting our API in Swagger page

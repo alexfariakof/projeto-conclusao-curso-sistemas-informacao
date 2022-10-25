@@ -7,7 +7,7 @@ export const Dashboard = () => {
         <LayoutMasterPage 
         titulo='Dashboard' 
         barraDeFerramentas={(
-            <BarraFerramentas btnNovo={false} btnVoltar={false}  />
+            <BarraFerramentas isOpenDataMesAno={true} btnSalvar={false} btnNovo={false} btnVoltar={false}  />
           )}
         > 
             <Box gap={1}

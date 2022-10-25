@@ -6,6 +6,8 @@ import { Dashboard } from '../pages/Dashboard';
 import { Despesas } from '../pages/Despesas';
 import { Lancamentos } from '../pages/Lancamentos';
 import { Receitas } from '../pages/Receitas';
+import { Categorias } from '../pages/Categorias';
+import { Configuracoes } from '../pages/Configuracoes';
 
 export const AppRoutes = () => {
     const { toggleTheme } = useAppThemeContext();
@@ -17,6 +19,11 @@ export const AppRoutes = () => {
                 icon: 'home',
                 path: '/pagina-inicial',
                 label: 'Home'
+            },
+            {
+                icon: 'listalt',
+                path: '/categorias',
+                label: 'Categorias'
             },
             {
                 icon: 'listalt',
@@ -43,10 +50,9 @@ export const AppRoutes = () => {
             <Route path='/despesas/:id' element={<Despesas />} />
             <Route path='/receitas' element={<Receitas />} />
             <Route path='/receitas/:id' element={<Receitas />} />
-            <Route path='/categorias' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Categoria</Button>} />
-            <Route path='/categorias/:id' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Categoria</Button>} />
+            <Route path='/categorias' element={<Categorias />} />
             <Route path='/lancamentos' element={<Lancamentos />} />
-            <Route path='/configuracoes' element={<Button variant='contained' color='primary' onClick={toggleTheme} >Configurações</Button>} />
+            <Route path='/configuracoes' element={<Configuracoes />} />
             <Route path='/alterar-senha' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Aletar Senha</Button>} />
             <Route path='/auth' element={<Button variant='contained' color='primary' onClick={toggleDrawerOpen} >Login</Button>} />
             {<Route path='*' element={<Navigate to='pagina-inicial' />} />}

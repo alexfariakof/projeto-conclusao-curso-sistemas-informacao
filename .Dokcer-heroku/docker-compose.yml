@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    image: api-backend-dp-heroku
+    container_name: api-backend-dp-heroku
+    build:
+      context: .
+      dockerfile: ./Dockerfile    
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+    ports:
+      - "5001:5000"      
+      - "80:80"
+      - "8080:8080"
+

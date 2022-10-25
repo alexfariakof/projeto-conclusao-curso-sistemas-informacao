@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@mui/material';
+import { Box, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { LayoutMasterPage } from '../shared/layouts';
 import { BarraFerramentas } from '../shared/components';
 import { useEffect, useState } from 'react';
@@ -72,7 +72,7 @@ export const Lancamentos = () => {
     return (
         <LayoutMasterPage titulo='Lançamentos'
             barraDeFerramentas={(
-                <BarraFerramentas btnNovo={false} />
+                <BarraFerramentas isOpenDataMesAno={true} btnNovo={false} btnSalvar={false} />
             )}
         >
 

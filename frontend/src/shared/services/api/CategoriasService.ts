@@ -1,10 +1,10 @@
 import { Api } from "../axios-config";
 
 export interface ICategoriaVO {
-    Id:number;
-    IdTipoCategoria : number;
-    Descricao: string;
-    IdUsuario: Number;    
+    id:number;
+    idTipoCategoria : number;
+    descricao: string;
+    idUsuario: number;    
 }
 
 const getAll = async (): Promise<ICategoriaVO[] | Error> => {
@@ -23,7 +23,7 @@ const getAll = async (): Promise<ICategoriaVO[] | Error> => {
 
 const getById = async (id: number): Promise<ICategoriaVO | Error> => {
     try {
-        const { data } = await Api.get('/Categoria/$(id)');
+        const { data } = await Api.get('/Categoria/' + id);
         if (data) {
             return data;
         }
@@ -37,23 +37,23 @@ const getById = async (id: number): Promise<ICategoriaVO | Error> => {
 
 const getByTipoCategoria = async (idUsuario: number, idTipoCategoria: number): Promise<ICategoriaVO[] | Error> => {
     try {
-        const { data } = await Api.get('/Categoria/byTipoCategoria/$(idUsuario)/$(idTipoCategoria)');
+        const { data } = await Api.get('/Categoria/byTipoCategoria/' + idUsuario + '/' + idTipoCategoria);
         if (data) {
             return data;
         }
 
-        return Error('Erro getById ao pesquisar Categorias.');
+        return Error('Erro getByTipoCategoria ao pesquisar Categorias.');
     } catch (error) {
         console.log(error);
-        return Error((error as { message: string }).message || 'Erro getById ao pesquisar Categorias.');
+        return Error((error as { message: string }).message || 'Erro getByTipoCategoria ao pesquisar Categorias.');
     }
 };
 
-const create = async (dados: Omit<ICategoriaVO, 'id'>): Promise<number | Error> => {
+const create = async (dados: Omit<ICategoriaVO, 'id'>): Promise<any | Error> => {
     try {
         const { data } = await Api.post<ICategoriaVO>('/Categoria', dados );
         if (data) {
-            return data.Id
+            return data
         }
 
         return Error('Erro ao criar novo registro de Categoria.');
@@ -66,7 +66,7 @@ const create = async (dados: Omit<ICategoriaVO, 'id'>): Promise<number | Error> 
 
 const updateById = async (id: number, dados: ICategoriaVO): Promise<ICategoriaVO | Error> => {
     try {
-        dados.Id = id;
+        dados.id = id;
         const { data } = await Api.put<ICategoriaVO>('/Categoria', dados);
         if (data) {
             return data
@@ -80,11 +80,11 @@ const updateById = async (id: number, dados: ICategoriaVO): Promise<ICategoriaVO
 
  };
 
-const deleteById = async (id: number): Promise<void | Error> => { 
+const deleteById = async (id: number): Promise<any | Error> => { 
     try {
-        const { data } = await Api.delete('/Categoria/$(id)');
+        const { data } = await Api.delete('/Categoria/' + id);
         if (data) {
-            return data.id
+            return Boolean(data.message)
         }
 
         return Error('Erro ao deletar registro de Categoria.');

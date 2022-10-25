@@ -131,6 +131,7 @@ export const Receitas: React.FC = () => {
             titulo='Receitas'
             barraDeFerramentas={(
                 <BarraFerramentas
+                    isOpenTxtBusca={true}
                     btnVoltar onClickVoltar={() => navigate('/Receitas/voltar')}
                     btnNovo onClickNovo={() => navigate('/Receitas/0')} />
             )}
@@ -155,7 +156,7 @@ export const Receitas: React.FC = () => {
                         onChange={handleChangeCategoria}
                     >
                         <MenuItem value={0}>
-                            <em>None</em>
+                            <em>Nenhuma Categoria Selecionada</em>
                         </MenuItem>                        
                         <MenuItem value={1}>Salário</MenuItem>
                         <MenuItem value={2}>Prêmio</MenuItem>
