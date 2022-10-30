@@ -35,6 +35,21 @@ const getById = async (id: number): Promise<ICategoriaVO | Error> => {
     }
 };
 
+const getByIdUsuario = async (idUsuario: number): Promise<ICategoriaVO[] | Error> => {
+    try {
+        const { data } = await Api.get('/Categoria/byIdUsuario/' + idUsuario);
+        if (data) {
+            return data;
+        }
+
+        return Error('Erro getByIdUsuario ao listar Categorias.');
+    } catch (error) {
+        console.log(error);
+        return Error((error as { message: string }).message || 'Erro getByIdusuario ao listar Categorias.');
+    }
+};
+
+
 const getByTipoCategoria = async (idUsuario: number, idTipoCategoria: number): Promise<ICategoriaVO[] | Error> => {
     try {
         const { data } = await Api.get('/Categoria/byTipoCategoria/' + idUsuario + '/' + idTipoCategoria);
@@ -98,6 +113,7 @@ const deleteById = async (id: number): Promise<any | Error> => {
 export const CategoriasService = {
     getAll,
     getById,
+    getByIdUsuario,
     getByTipoCategoria,
     create,
     updateById,

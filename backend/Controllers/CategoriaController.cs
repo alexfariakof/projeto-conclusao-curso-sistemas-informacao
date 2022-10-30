@@ -3,6 +3,8 @@ using backend.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Internal;
+using System.Linq;
 
 namespace backend.Controllers
 {
@@ -33,6 +35,15 @@ namespace backend.Controllers
 
             return Ok(_categoria);
         }
+
+        [HttpGet("byIdUsuario/{idUsuario}")]
+        public IActionResult GetByIdUsuario([FromRoute] int idUsuario)
+        {
+            var list = _categoriaBusiness.FindAll();
+            var result = list.Where(item => item.IdUsuario.Equals(idUsuario));
+            return Ok(result);
+        }
+
 
         [HttpGet("byTipoCategoria/{idUsuario}/{idTipoCategoria}")]
         public IActionResult GetByTipoCategoria([FromRoute] int idUsuario, [FromRoute] int idTipoCategoria)
@@ -85,7 +96,8 @@ namespace backend.Controllers
         public IActionResult Delete(int id)
         {
             _categoriaBusiness.Delete(id);
-            return NoContent();
+            return new ObjectResult(new { message = true });
+            //return NoContent();
         }
     }
 }

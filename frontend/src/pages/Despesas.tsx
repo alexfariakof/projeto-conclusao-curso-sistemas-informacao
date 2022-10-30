@@ -80,7 +80,8 @@ export const Despesas: React.FC = () => {
                         }
                     }
                 });
-        } else {
+        }
+        else {
             DespesasService
                 .updateById(Number(id), dados)
                 .then((result) => {
@@ -140,8 +141,8 @@ export const Despesas: React.FC = () => {
             barraDeFerramentas={(
                 <BarraFerramentas
                     isOpenTxtBusca={true}
-                    btnVoltar onClickVoltar={() => navigate('/despesas/voltar')}
-                    btnNovo onClickNovo={() => navigate('/despesas/0')} 
+                    btnVoltar onClickVoltar={() => navigate('/lancamentos')}
+                    btnNovo onClickNovo={() => handleClear()} 
                     btnSalvar onClickSalvar={() => handleSave() }
                     />
             )}

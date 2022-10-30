@@ -3,6 +3,7 @@
 namespace backend.Data.VO
 {
     public class LancamentoVO
+
     {
         public int Id { get; set; }
         public int IdUsuario { get; set; }

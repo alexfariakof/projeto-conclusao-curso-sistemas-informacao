@@ -12,4 +12,8 @@ INSERT INTO `Categoria` (`idUsuario`,`idTipoCategoria` ,`descricao`) VALUES  (0,
 INSERT INTO `Categoria` (`idUsuario`,`idTipoCategoria` ,`descricao`) VALUES  (0, 2, 'Investimento' );
 INSERT INTO `Categoria` (`idUsuario`,`idTipoCategoria` ,`descricao`) VALUES  (0, 2, 'Benefício' );
 INSERT INTO `Categoria` (`idUsuario`,`idTipoCategoria` ,`descricao`) VALUES  (0, 2, 'Outro' );
+INSERT INTO `Categoria` (`idUsuario`,`idTipoCategoria` ,`descricao`) VALUES  (1, 1, 'Lazer Criado' );
+INSERT INTO `Categoria` (`idUsuario`,`idTipoCategoria` ,`descricao`) VALUES  (1, 1, 'Lazer 3 Criado ' );
+INSERT INTO `Categoria` (`idUsuario`,`idTipoCategoria` ,`descricao`) VALUES  (1, 2, 'Beneficio 2' );
+INSERT INTO `Categoria` (`idUsuario`,`idTipoCategoria` ,`descricao`) VALUES  (1, 2, 'Salario 2 ' );
 

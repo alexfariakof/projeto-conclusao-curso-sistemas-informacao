@@ -92,7 +92,7 @@ export const Lancamentos = () => {
                     <Table>
                         <TableHead>
                             <TableRow>
-                                <TableCell align='center' >Ações</TableCell>
+                                <TableCell align='center' width="100vw" >Ações</TableCell>
                                 <TableCell>Usuário</TableCell>
                                 <TableCell>IdDespesa</TableCell>
                                 <TableCell>IdReceita</TableCell>

@@ -64,11 +64,11 @@ export const Receitas: React.FC = () => {
                     } 
                     else {
                         if (dados.id === 0 && result.message === true) {
-                            alert('recetitaesa cadastrada com sucesso!');
+                            alert('Recetita cadastrada com sucesso!');
                             handleClear();
                         }
                         else {
-                            alert('recetitaesa atualizada com sucesso!');
+                            alert('Recetita atualizada com sucesso!');
                             navigate(`/lancamentos`);
                         }
                     }
@@ -132,8 +132,9 @@ export const Receitas: React.FC = () => {
             barraDeFerramentas={(
                 <BarraFerramentas
                     isOpenTxtBusca={true}
-                    btnVoltar onClickVoltar={() => navigate('/Receitas/voltar')}
-                    btnNovo onClickNovo={() => navigate('/Receitas/0')} />
+                    btnVoltar onClickVoltar={() => navigate('/lancamentos')}
+                    btnNovo onClickNovo={() => handleClear()} 
+                    btnSalvar onClickSalvar={() => handleSave()} />
             )}
         >
             <Box
@@ -158,11 +159,11 @@ export const Receitas: React.FC = () => {
                         <MenuItem value={0}>
                             <em>Nenhuma Categoria Selecionada</em>
                         </MenuItem>                        
-                        <MenuItem value={1}>Salário</MenuItem>
-                        <MenuItem value={2}>Prêmio</MenuItem>
-                        <MenuItem value={3}>Investimento</MenuItem>
-                        <MenuItem value={4}>Benefício</MenuItem>
-                        <MenuItem value={5}>Outro</MenuItem>
+                        <MenuItem value={8}>Salário</MenuItem>
+                        <MenuItem value={9}>Prêmio</MenuItem>
+                        <MenuItem value={10}>Investimento</MenuItem>
+                        <MenuItem value={11}>Benefício</MenuItem>
+                        <MenuItem value={12}>Outro</MenuItem>
                     </Select>
                 </FormControl>
                 <FormControl size="small" fullWidth  >
@@ -193,14 +194,6 @@ export const Receitas: React.FC = () => {
                         type="number"
                     />
                 </FormControl>
-                <Button
-                    color='primary'
-                    disableElevation
-                    variant='contained'
-                    startIcon={<Save />}
-                    type='submit'
-                     onClick={handleSave}
-                >Salvar</Button>
             </Box>
         </LayoutMasterPage>
     );
