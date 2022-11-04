@@ -2,7 +2,10 @@
 using backend.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace backend.Controllers
 {
@@ -14,13 +17,13 @@ namespace backend.Controllers
 
         public UsuarioController(IBusiness<Usuario> usuarioBusiness)
         {
-            _usuarioBusiness = usuarioBusiness;            
+            _usuarioBusiness = usuarioBusiness;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-           return Ok(_usuarioBusiness.FindAll());
+            return Ok(_usuarioBusiness.FindAll());
         }
 
         [HttpGet("{id}")]
@@ -35,7 +38,7 @@ namespace backend.Controllers
         }
 
         //[Authorize("Bearer")]
-        [HttpPost]        
+        [HttpPost]
         public IActionResult Post([FromBody] Usuario usuario)
         {
             if (usuario == null)
@@ -43,8 +46,34 @@ namespace backend.Controllers
             return new ObjectResult(_usuarioBusiness.Create(usuario));
         }
 
+        [HttpPut("Upload")]
+        public async Task<IActionResult> Put(int idUsuario, IFormFile image)
+        {
+
+            Usuario usuario = new Usuario();
+            using (var ms = new MemoryStream())
+            {
+                image.CopyTo(ms);
+                var fileBytes = ms.ToArray();
+                usuario.Id = idUsuario;
+                usuario.FotoPerfil = fileBytes;
+            };
+
+            if (usuario == null)
+                return BadRequest();
+
+            try
+            {
+                return new ObjectResult(new { message = true, usuarioImage = _usuarioBusiness.Update(usuario) });
+            }
+            catch
+            {
+                return BadRequest(new { message = "Não foi possível realizar o upload da imagem, tente mais tarde ou entre em contato com o suporte." });
+            }
+        }
+
         //[Authorize("Bearer")]
-        [HttpPut]        
+        [HttpPut]
         public IActionResult Put([FromBody] Usuario usuario)
         {
             if (usuario == null)
@@ -58,7 +87,7 @@ namespace backend.Controllers
         }
 
         //[Authorize("Bearer")]
-        [HttpDelete("{id}")]        
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             _usuarioBusiness.Delete(id);

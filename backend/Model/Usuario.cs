@@ -7,5 +7,7 @@ namespace backend.Model
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
+        public string Theme { get; set; }
+        public byte[] FotoPerfil { get; set; }
     }
 }

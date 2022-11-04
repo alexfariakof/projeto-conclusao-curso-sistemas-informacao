@@ -4,8 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
+using MySql.Data.MySqlClient;
+using System.Drawing;
+using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 namespace backend.Repositorio.Implementations
 {
@@ -22,21 +25,20 @@ namespace backend.Repositorio.Implementations
         {
 
 
-            string sql = " DECLARE @meses TABLE(id INT, mes varchar(3)) " + 
-                         " insert into @meses values(1,'JAN'), (2, 'FEV'), (3, 'MAR'), (4, 'ABR'), (5, 'MAI'), (6, 'JUN'), (7, 'JUL'), (8, 'AGO'), (9, 'SET'), (10, 'OUT'), (11, 'NOV'), (12, 'DEZ') " + 
-                         "Select * From " +
-                         "(Select id, mes From @meses) meses " +
-                         "  Left join " +
-                         "  (Select Month(data) as despesaMes, sum(valor) as despesaValor From despesa where idUsuario = @idUsuario  and year(data) = @ano " +
-                         "    Group by Month(data)) d on meses.id = d.despesaMes " +
-                         "  Left Join " +
-                         "  (Select Month(data) as receitaMes, sum(valor) as receitaValor From receita where idUsuario = @idUsuario  and year(data) = @ano " +
-                         "    Group by Month(data)) r on meses.id = r.receitaMes ";
+            string sql = "CREATE TEMPORARY TABLE meses(id INT, mes varchar(3)); " +
+                         "Insert into meses values(1,'JAN'), (2, 'FEV'), (3, 'MAR'), (4, 'ABR'), (5, 'MAI'), (6, 'JUN'), (7, 'JUL'), (8, 'AGO'), (9, 'SET'), (10, 'OUT'), (11, 'NOV'), (12, 'DEZ'); " +
+                         "Select * From(Select id, mes From meses) meses " +
+                         "  Left join(Select Month(data) as despesaMes, sum(valor) as despesaValor From Despesa where idUsuario = @idUsuario  and year(data) = @ano  " +
+                         " Group by Month(data)) d on meses.id = d.despesaMes " +
+                         "  Left Join(Select Month(data) as receitaMes, sum(valor) as receitaValor From Receita where idUsuario = @idUsuario  and year(data) = @ano " +
+                         " Group by Month(data)) r on meses.id = r.receitaMes; ";
+                        // "DROP TABLE meses;";
+
             using (_context)
             {
                 try
                 {
-                    var list = _context.Relatotio.FromSql(sql, new SqlParameter("@idUsuario", idUsuario), new SqlParameter("@ano", ano)).ToList();
+                    var list = _context.Relatotio.FromSql(sql, new MySqlParameter("@idUsuario", idUsuario), new MySqlParameter("@ano", ano)).ToList();
                     return list;
 
                 }
@@ -56,8 +58,8 @@ namespace backend.Repositorio.Implementations
                 {
                     command.CommandText = @"SELECT  sum(valor)  FROM Despesa where idUsuario = @idUsuario  and year(data) = @ano";
                     command.CommandType = CommandType.Text;
-                    command.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
-                    command.Parameters.Add(new SqlParameter("@ano", ano));
+                    command.Parameters.Add(new MySqlParameter("@idUsuario", idUsuario));
+                    command.Parameters.Add(new MySqlParameter("@ano", ano));
                     _context.Database.OpenConnection();
                     using (var result = command.ExecuteReader())
                     {
@@ -84,8 +86,8 @@ namespace backend.Repositorio.Implementations
                 {
                     command.CommandText = @"SELECT  sum(valor)  FROM Receita where idUsuario = @idUsuario  and year(data) = @ano";
                     command.CommandType = CommandType.Text;
-                    command.Parameters.Add(new SqlParameter("@idUsuario", idUsuario));
-                    command.Parameters.Add(new SqlParameter("@ano", ano));
+                    command.Parameters.Add(new MySqlParameter("@idUsuario", idUsuario));
+                    command.Parameters.Add(new MySqlParameter("@ano", ano));
                     _context.Database.OpenConnection();
                     using (var result = command.ExecuteReader())
                     {

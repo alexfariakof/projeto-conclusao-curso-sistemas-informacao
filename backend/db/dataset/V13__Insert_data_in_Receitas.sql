@@ -1,6 +1,6 @@
 ﻿use DespesasPessoaisDB;
 
-INSERT INTO `Receita`(`idUsuario`,`idCategoria`,`data`, `descricao`,`valor`) VALUES (1, 8, '2022-10-12 15:54:00', 'Pagamento qualquer', 2.987 );
+INSERT INTO `Receita`(`idUsuario`,`idCategoria`,`data`, `descricao`,`valor`) VALUES (1, 8, '2022-10-12 15:54:00', 'Pagamento qualquer', 20.987 );
 INSERT INTO `Receita`(`idUsuario`,`idCategoria`,`data`, `descricao`,`valor`) VALUES (1, 12, '2022-10-12 15:54:00', 'Pagamento qualquer', 1.88 );
 INSERT INTO `Receita`(`idUsuario`,`idCategoria`,`data`, `descricao`,`valor`) VALUES (1, 10, '2022-10-12 15:54:00', 'Pagamento qualquer', 7.987 );
 INSERT INTO `Receita`(`idUsuario`,`idCategoria`,`data`, `descricao`,`valor`) VALUES (1, 9, '2022-10-12 15:54:00', 'Pagamento qualquer', 44.7 );

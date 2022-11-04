@@ -41,10 +41,10 @@ export const BarraFerramentas: React.FC<IBarraFerramentasProps> = ({
         <Box height={theme.spacing(5)} marginX={1} padding={1} paddingX={2} display="flex" alignItems="center" gap={1} component={Paper} >
             {isOpenDataMesAno && (
 
-                <FormControl size="small"  >
+                <FormControl   >
                     <LocalizationProvider dateAdapter={AdapterDayjs} >
                         <Stack spacing={3} >
-                            <DesktopDatePicker
+                            <DesktopDatePicker                                                                
                                 label="Data"
                                 value={value}
                                 openTo="year"
@@ -52,7 +52,7 @@ export const BarraFerramentas: React.FC<IBarraFerramentasProps> = ({
                                 onChange={(newValue) => {
                                     setValue(newValue);
                                 }}
-                                renderInput={(params) => <TextField {...params} />}
+                                renderInput={(params) => <TextField size="small" {...params} />}
                             />
                         </Stack>
                     </LocalizationProvider>

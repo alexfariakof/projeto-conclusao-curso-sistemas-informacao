@@ -69,7 +69,7 @@ namespace backend.Controllers
 
             try
             {
-                return new ObjectResult(new { message = true, receita = _categoriaBusiness.Create(categoria) });
+                return new ObjectResult(new { message = true, categoria = _categoriaBusiness.Create(categoria) });
             }
             catch
             {

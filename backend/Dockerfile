@@ -10,10 +10,10 @@ COPY ["backend/backend-despesas-inteligente.csproj", "./"]
 RUN dotnet restore "backend-despesas-inteligente.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "backend/backend-despesas-inteligente.csproj" -c Release -o /app/build
+RUN dotnet build "backend-despesas-inteligente.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "backend/backend-despesas-inteligente.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "backend-despesas-inteligente.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

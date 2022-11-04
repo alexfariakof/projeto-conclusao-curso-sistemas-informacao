@@ -24,7 +24,6 @@ services:
   backend:
     container_name: api-back-end
     image: back-end    
-    restart: always
     build:
       context: .
       dockerfile: backend/Dockerfile    

@@ -8,7 +8,7 @@ namespace backend.Model
         public string Mes { get; set; }
         public int? DespesaMes { get; set; }
         public Decimal? DespesaValor { get; set; }
-        public int? DeceitaMes { get; set; }
+        public int? ReceitaMes { get; set; }
         public Decimal? ReceitaValor { get; set; }
     }
 }

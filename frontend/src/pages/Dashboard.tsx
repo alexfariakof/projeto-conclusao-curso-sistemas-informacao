@@ -1,8 +1,10 @@
 import { LayoutMasterPage } from '../shared/layouts';
-import { Box, Paper } from '@mui/material';
+import { Box, Paper, useMediaQuery, Theme } from '@mui/material';
+
 import { BarCharts, BarraFerramentas } from '../shared/components';
 
 export const Dashboard = () => {
+    
     return (
         <LayoutMasterPage 
         titulo='Dashboard' 
@@ -14,7 +16,7 @@ export const Dashboard = () => {
                 margin={1}
                 padding={1}
                 paddingX={2}
-                height="100%"
+                height="100vh"
                 display="flex"
                 flexDirection="column"
                 alignItems="start"
