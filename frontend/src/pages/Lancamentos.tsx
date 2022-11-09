@@ -1,4 +1,4 @@
-import { Box, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { useTheme, Box, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { LayoutMasterPage } from '../shared/layouts';
 import { BarraFerramentas } from '../shared/components';
 import { useEffect, useState } from 'react';
@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 export const Lancamentos = () => {
     const navigate = useNavigate();
     const { debounce } = useDebounce();
-
+    const theme = useTheme();
     const [rows, setRows] = useState<(Omit<ILancamentoVO, 'id'>[])>([]);
 
     useEffect(() => {
@@ -81,7 +81,7 @@ export const Lancamentos = () => {
                 margin={1}
                 padding={1}
                 paddingX={2}
-                height="100vh"
+                height={theme.spacing}
                 display="flex"
                 flexDirection="row"
                 alignItems="start"
@@ -93,9 +93,6 @@ export const Lancamentos = () => {
                         <TableHead>
                             <TableRow>
                                 <TableCell align='center' width="100vw" >Ações</TableCell>
-                                <TableCell>Usuário</TableCell>
-                                <TableCell>IdDespesa</TableCell>
-                                <TableCell>IdReceita</TableCell>
                                 <TableCell>Data</TableCell>
                                 <TableCell>Tipo</TableCell>
                                 <TableCell>Valor</TableCell>
@@ -113,9 +110,6 @@ export const Lancamentos = () => {
                                         <EditIcon />
                                     </IconButton>
                                 </TableCell>
-                                <TableCell>Alex</TableCell>
-                                <TableCell>0</TableCell>
-                                <TableCell>1</TableCell>
                                 <TableCell>18/08/2014</TableCell>
                                 <TableCell>Receitas</TableCell>
                                 <TableCell>R$ 12.250,00</TableCell>
@@ -134,9 +128,6 @@ export const Lancamentos = () => {
                                                 <EditIcon />
                                             </IconButton>
                                         </TableCell>
-                                        <TableCell>{row.idUsuario}</TableCell>
-                                        <TableCell>{row.idDespesa}</TableCell>
-                                        <TableCell>{row.idReceita}</TableCell>
                                         <TableCell>{row.data}</TableCell>
                                         <TableCell>{row.tipo }</TableCell>                                        
                                         <TableCell>R$ {row.valor}</TableCell>

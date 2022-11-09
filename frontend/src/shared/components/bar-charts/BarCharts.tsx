@@ -40,7 +40,6 @@ export const optionsRight = {
     elements: {
         bar: {
             borderWidth: 2,
-            outerHeight: '100%'
         },
     },
     responsive: true,

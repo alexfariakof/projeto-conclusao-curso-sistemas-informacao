@@ -17,7 +17,7 @@ export const LayoutMasterPage: React.FC<ILayoutMasterPageProps> = ({ children, t
 
     return (
         <Box height="100%" display="flex" flexDirection="column" gap={1}>
-            <Box padding={1} display="flex" alignItems="center" height={theme.spacing(12)} >
+            <Box padding={1} display="flex" alignItems="center" height={theme.spacing(8)} >
                 {smDown && (
 
                     <IconButton onClick={toggleDrawerOpen}>
