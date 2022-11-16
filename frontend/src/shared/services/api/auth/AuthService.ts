@@ -9,8 +9,10 @@ export interface ControleAcessoVO {
 } 
 
 const auth = async (email: string, password: string): Promise<any> => {
-    try {
-        const  { data } = await Api.get('/ControleAcesso/SignIn/' + email + '/' + password );
+    try {        
+        let dados = { Email: email,  Senha: password };        
+
+        const  { data } = await Api.post('/ControleAcesso/SignIn', dados);
         if (data) {
             return data;
         }
