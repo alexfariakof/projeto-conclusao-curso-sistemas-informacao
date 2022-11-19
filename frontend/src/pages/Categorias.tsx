@@ -173,7 +173,7 @@ export const Categorias: React.FC = () => {
                             onChange={handleChangeTipoCategoria}
                             defaultValue='0'
                         >
-                            <MenuItem value={0} >Todas</MenuItem>
+                            <MenuItem value={0} >Nenhum Tipo de Categoria Selecionada</MenuItem>
                             <MenuItem value={1}>Despesas</MenuItem>
                             <MenuItem value={2}>Receitas</MenuItem>
                         </Select>
