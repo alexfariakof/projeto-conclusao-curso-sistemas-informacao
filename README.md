@@ -7,3 +7,6 @@ Descrição dos itens:
 5.	Ao clicar nesse link uma requisição para redefinição de senha será enviada;
 6.	Ao clicar nesse link o sistema abrirá um formulário para cadastro de um novo usuário.
 
+
+
+![alt text](https://youtu.be/rpyBqvYmuiQ)
