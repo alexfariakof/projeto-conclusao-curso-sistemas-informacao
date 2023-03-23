@@ -10,3 +10,5 @@ Descrição dos itens:
 
 
 ![alt text](https://youtu.be/rpyBqvYmuiQ)
+
+[embed]http://example.com/file.pdf[/embed]
