@@ -45,3 +45,15 @@
 ![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_23.png)
 
 ![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_24.png)
+
+![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_25.png)
+
+![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_26.png)
+
+![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_27.png)
+
+![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_28.png)
+
+![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_29.png)
+
+![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_30.png)
