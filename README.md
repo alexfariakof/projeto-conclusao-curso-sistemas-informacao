@@ -6,19 +6,20 @@
 # Descrição 
 </h2>
 
-<h4 align="justify">
+<h6 align="justify">
  Este é um projeto de software web desenvolvido em React com Material UI no frontend e .net core no backend para ajudar as pessoas a controlar suas despesas pessoais. Os usuários podem cadastrar suas despesas, categorizá-las e ver gráficos e relatórios para acompanhar suas finanças. A interface é moderna, responsiva e amigável, seguindo as boas práticas de programação. O projeto oferece uma solução completa para gerenciar finanças pessoais.
-</h4>
+</h6>
 
 <h2 align="left"> 
 # Acesso ao projeto
 </h2>
 
-<h4 align="justify">
+<h6 align="justify">
     Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
-</h4>
+</h6>
 
    [Despesas Inteligente](https://r6oi0k-3000.csb.app/)
+<a href="https://r6oi0k-3000.csb.app/" target="_blank">Despesas Inteligente</a>
 
 <h2 align="left">
 # Segue abaixo a documentação
