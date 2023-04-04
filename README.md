@@ -19,7 +19,12 @@
 </h6>
 
    [Despesas Inteligente](https://r6oi0k-3000.csb.app/)
-<a href="https://r6oi0k-3000.csb.app/" target="_blank">Despesas Inteligente</a>
+
+<a href="https://r6oi0k-3000.csb.app/" target="_blank" >Despesas Inteligente</a>
+
+<a href="https://r6oi0k-3000.csb.app/" target="_top" >Despesas Inteligente</a>
+
+
 
 <h2 align="left">
 # Segue abaixo a documentação
