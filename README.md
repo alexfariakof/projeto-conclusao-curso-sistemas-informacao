@@ -11,20 +11,12 @@
 </h6>
 
 <h2 align="left"> 
-# Acesso ao projeto
+# Acesso ao projeto [Despesas Inteligente](https://r6oi0k-3000.csb.app/)
 </h2>
 
 <h6 align="justify">
     Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
 </h6>
-
-   [Despesas Inteligente](https://r6oi0k-3000.csb.app/)
-
-<a href="https://r6oi0k-3000.csb.app/" target="_blank" >Despesas Inteligente</a>
-
-<a href="https://r6oi0k-3000.csb.app/" target="_top" >Despesas Inteligente</a>
-
-
 
 <h2 align="left">
 # Segue abaixo a documentação
