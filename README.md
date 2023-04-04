@@ -18,7 +18,7 @@
     Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
 </h4>
 
-   [Flex Grid](https://r6oi0k-3000.csb.app/)
+   [Despesas Inteligente](https://r6oi0k-3000.csb.app/)
 
 <h2 align="left">
 # Segue abaixo a documentação
