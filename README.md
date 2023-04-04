@@ -1,22 +1,24 @@
-<h4 align="center"> 
+<h2 align="center"> 
     :construction:  Projeto em construção  :construction:
-</h4>
-
-<h4 align="left"> 
-    Descrição 
-</h4>
-
-<h2 align="justify">
- Este é um projeto de software web desenvolvido em React com Material UI para ajudar as pessoas a controlar suas despesas pessoais. Os usuários podem cadastrar suas despesas, categorizá-las e ver gráficos e relatórios para acompanhar suas finanças. A interface é moderna, responsiva e amigável, seguindo as boas práticas de programação. O projeto oferece uma solução completa para gerenciar finanças pessoais.
 </h2>
 
+<h2 align="left"> 
+    Descrição 
+</h2>
+
+<h4 align="justify">
+ Este é um projeto de software web desenvolvido em React com Material UI para ajudar as pessoas a controlar suas despesas pessoais. Os usuários podem cadastrar suas despesas, categorizá-las e ver gráficos e relatórios para acompanhar suas finanças. A interface é moderna, responsiva e amigável, seguindo as boas práticas de programação. O projeto oferece uma solução completa para gerenciar finanças pessoais.
+</h4>
+
+<h2 align="left"> 
 # 📁 Acesso ao projeto
+</h2>
 
     https://r6oi0k-3000.csb.app/
 
-<h4 align="justify">
-#  Documentação 
-</h4>
+<h2 align="left">
+# Segue abaixo a documentação
+</h2>
 
 ![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_1.png)
 
