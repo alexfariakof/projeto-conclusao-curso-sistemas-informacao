@@ -50,7 +50,7 @@ export const BarraFerramentas: React.FC<IBarraFerramentasProps> = ({
                                 openTo="year"
                                 inputFormat="MM/YYYY"
                                 onChange={(newValue) => {
-                                    setValue(newValue);
+                                   setValue(newValue);
                                 }}
                                 renderInput={(params) => <TextField size="small" {...params} />}
                             />

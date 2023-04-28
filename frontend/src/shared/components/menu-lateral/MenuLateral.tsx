@@ -66,7 +66,7 @@ export const MenuLateral: React.FC<React.PropsWithChildren> = ({ children }) => 
                         <Avatar
                             alt="Alex Ribeiro"
                             sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
-                            src="/static/images/avatar/1.jpg" />
+                            src="_perfil.png" />
                     </Box>
                     <Divider />
                     <Box flex={1}>

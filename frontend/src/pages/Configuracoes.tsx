@@ -5,9 +5,6 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import SaveIcon from '@mui/icons-material/Save';
 import { LayoutMasterPage } from '../shared/layouts';
-import { BarraFerramentas } from '../shared/components';
-
-
 interface ITrocaSenha {
     password: string
     showPassword: boolean;
@@ -59,8 +56,7 @@ export const Configuracoes = () => {
 
     return (
         <LayoutMasterPage
-            titulo='Configurações'            
-        >
+            titulo='Configurações'   >
             <Box height="100%" width='100%' display="flex" margin={0} flexDirection="column" bgcolor='#00F12F' >
                 <Box
                     gap={1}
@@ -166,12 +162,7 @@ export const Configuracoes = () => {
                                 sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
                                 src="/static/images/avatar/1.jpg" />
                         </InputLabel>
-                        <input
-                            style={{ display: 'none' }}
-                            id='upload-photo'
-                            name='upload-photo'
-                            type='file'
-                        />
+                        <input style={{display:'none'}}   id='upload-photo'name='upload-photo' type='file' />
                         <br />
                         <Button color='primary' disableElevation variant='contained' startIcon={<SaveIcon />} onClick={handleChangePassword} >Salvar</Button>                </Box>
                 </Box>

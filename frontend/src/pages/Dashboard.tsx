@@ -1,17 +1,15 @@
 import { LayoutMasterPage } from '../shared/layouts';
-import { Box, Paper, useMediaQuery, Theme } from '@mui/material';
-
+import { Box, Paper } from '@mui/material';
 import { BarCharts, BarraFerramentas } from '../shared/components';
 
 export const Dashboard = () => {
     
     return (
-        <LayoutMasterPage 
-        titulo='Dashboard' 
-        barraDeFerramentas={(
-            <BarraFerramentas isOpenDataMesAno={true} btnSalvar={false} btnNovo={false} btnVoltar={false}  />
-          )}
-        > 
+        <LayoutMasterPage   
+            titulo='Dashboard'
+            barraDeFerramentas={(
+                <BarraFerramentas isOpenDataMesAno={true} btnSalvar={false} btnNovo={false} btnVoltar={false} />
+            )} >                 
             <Box gap={1}
                 margin={1}
                 padding={1}
@@ -21,6 +19,7 @@ export const Dashboard = () => {
                 flexDirection="column"
                 alignItems="start"
                 component={Paper} 
+                flexGrow={1}
                 >
                     <BarCharts />
             </Box>

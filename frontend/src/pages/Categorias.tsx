@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Box, FormControl, InputLabel, MenuItem, Paper, Select, SelectChangeEvent, TextField, IconButton } from "@mui/material";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { BarraFerramentas } from '../shared/components';
@@ -149,10 +149,9 @@ export const Categorias: React.FC = () => {
                     <BarraFerramentas
                         isOpenTxtBusca={true}
                         btnVoltar onClickVoltar={() => navigate('/Categorias')}
-                        btnNovo onClickNovo={() => handleClear()} 
-                        btnSalvar onClickSalvar={() => handleSave() } />
-                )}
-            >
+                        btnNovo onClickNovo={() => handleClear()}
+                        btnSalvar onClickSalvar={() => handleSave()} />
+                )}   >
                 <Box
                     gap={1}
                     margin={1}

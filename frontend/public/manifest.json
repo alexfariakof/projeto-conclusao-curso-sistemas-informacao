@@ -1,6 +1,6 @@
 {
-  "short_name": "despesas-anyware",
-  "name": "Despesas Anyware",
+  "short_name": "despesas Anywere",
+  "name": "Despesas Anywere",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "favicon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "favicon-512px.png",
       "type": "image/png",
       "sizes": "512x512"
     }

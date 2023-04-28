@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -76,14 +77,28 @@ export const data = {
 
 
 export const BarCharts: React.FC = () => {
+    const [chartHeight, setChartHeight] = useState(0);
     const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
     const theme = useTheme();
 
+    useEffect(() => {
+        const handleResize = () => {
+          setChartHeight(window.innerHeight * 0.8); // Define a altura do gráfico como 80% da altura da janela
+        };
+    
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Define a altura do gráfico ao montar o componente
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
+
     return (
         smDown ?
-            <Bar options={optionsRight} data={data}  />
+            <Bar height={chartHeight} options={optionsRight} data={data}  />
             :
-            <Bar options={optionsTop} data={data} />
+            <Bar height={chartHeight} options={optionsTop} data={data} />
     );
 
 };

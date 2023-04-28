@@ -1,4 +1,4 @@
-npm install @date-io/dayjs
+npm install dayjs @date-io/dayjs
 npm install dayjs --save
 npm i @unform/core
 npm i @unform/web

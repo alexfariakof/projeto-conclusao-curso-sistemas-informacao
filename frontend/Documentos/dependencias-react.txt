@@ -1,0 +1,5 @@
+npm install --save-dev @faker-js/faker
+npm install @mui/material @emotion/react @emotion/styled
+npm install react-chartjs-2 chart.js
+npm install dayjs @date-io/dayjs rollup typescript
+npm install axios
