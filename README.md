@@ -2,10 +2,6 @@
     :construction:  Projeto em construção  :construction:
 </h2>
 
-
-
-http://20.253.95.55/swagger/index.html
-
 <h2 align="left"> 
 # Descrição 
 </h2>
@@ -15,11 +11,11 @@ http://20.253.95.55/swagger/index.html
 </h6>
 
 <h2 align="left"> 
-# Acesso ao frontend projeto <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >Frontend Despesas Pessoais </a>
+# Acesso ao frontend projeto <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >frontend</a>
 </h2>
 
 <h2 align="left"> 
-# Acesso ao backend projeto <a href="http://20.253.95.55/swagger/index.html" target="_blank" >Backend Despesas Pessoais </a>
+# Acesso ao backend projeto <a href="http://20.253.95.55/swagger/index.html" target="_blank" >backend</a>
 </h2>
 
 
