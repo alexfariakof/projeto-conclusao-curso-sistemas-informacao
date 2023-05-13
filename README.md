@@ -2,6 +2,10 @@
     :construction:  Projeto em construção  :construction:
 </h2>
 
+
+
+http://20.253.95.55/swagger/index.html
+
 <h2 align="left"> 
 # Descrição 
 </h2>
@@ -11,13 +15,18 @@
 </h6>
 
 <h2 align="left"> 
-# Acesso ao projeto <a href="https://r6oi0k-3000.csb.app/" target="_blank" >Despesas Pessoais Inteligente</a>
+# Acesso ao frontend projeto <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >Frontend Despesas Pessoais </a>
 </h2>
+
+<h2 align="left"> 
+# Acesso ao backend projeto <a href="http://20.253.95.55/swagger/index.html" target="_blank" >Backend Despesas Pessoais </a>
+</h2>
+
 
 <h6 align="justify">
     Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
  
- <a href="https://r6oi0k-3000.csb.app/" target="_top" >Despesas Pessoais Inteligente</a>
+ <a href="" target="_top" > Frontend Despesas Pessoais</a>
 </h6>
 
 
