@@ -91,5 +91,5 @@
 ![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_30.png)
 
 <h2 align="left"> 
-# Acesso ao projeto <a href="https://r6oi0k-3000.csb.app/" target="_blank" >Despesas Pessoais Inteligente</a>
+# Acesso ao projeto <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >Despesas Pessoais Inteligente</a>
 </h2>
