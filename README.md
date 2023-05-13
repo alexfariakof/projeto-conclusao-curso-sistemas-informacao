@@ -10,6 +10,9 @@
  Este é um projeto de software web desenvolvido em React com Material UI no frontend e .net core no backend para ajudar as pessoas a controlar suas despesas pessoais. Os usuários podem cadastrar suas despesas, categorizá-las e ver gráficos e relatórios para acompanhar suas finanças. A interface é moderna, responsiva e amigável, seguindo as boas práticas de programação. O projeto oferece uma solução completa para gerenciar finanças pessoais.
 </h6>
 
+<h6 align="justify">
+    Obs.: Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
+</h6>
 <h2 align="left"> 
 # Acesso ao <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >frontend</a> do projeto
 </h2>
@@ -21,8 +24,6 @@
 
 <h6 align="justify">
     Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
- 
- <a href="" target="_top" > Frontend Despesas Pessoais</a>
 </h6>
 
 
