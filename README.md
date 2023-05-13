@@ -14,11 +14,11 @@
     Obs.: Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
 </h6>
 <h2 align="left"> 
-# Acesso ao <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >frontend</a> do projeto
+# Acesso ao protótipo <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >frontend</a> do projeto
 </h2>
 
 <h2 align="left"> 
-# Acesso ao <a href="http://20.253.95.55/swagger/index.html" target="_blank" >backend</a> de projeto
+# Acesso ao protótipo <a href="http://20.253.95.55/swagger/index.html" target="_blank" >backend</a> de projeto
 </h2>
 
 
