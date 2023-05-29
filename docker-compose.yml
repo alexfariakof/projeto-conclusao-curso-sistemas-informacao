@@ -16,6 +16,8 @@ services:
       MYSQL_PASSWORD: docker
       MYSQL_DATABASE: DespesasPessoaisDB
       LANG: C.UTF-8
+      MYSQL_CHARSET: utf8
+      MYSQL_COLLATION: utf8_general_ci
     ports:
       - "3308:3306"
     networks:

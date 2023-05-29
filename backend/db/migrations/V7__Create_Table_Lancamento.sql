@@ -1,6 +1,6 @@
 ﻿use DespesasPessoaisDB;
 
-CREATE  TABLE `DespesasPessoaisDB`.`Lancamento` (
+CREATE  TABLE `Lancamento` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `idUsuario` INT NULL ,
   `idDespesa` INT NULL ,
@@ -11,4 +11,4 @@ CREATE  TABLE `DespesasPessoaisDB`.`Lancamento` (
   `dataCriacao` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ,
   PRIMARY KEY (`id`) )
   DEFAULT CHARACTER SET = utf8
-  COLLATE = utf8_general_ci;
+  DEFAULT COLLATE = utf8_general_ci;
