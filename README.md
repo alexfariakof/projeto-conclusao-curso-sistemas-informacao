@@ -14,9 +14,12 @@
 </h2>
 
 <h2 align="left"> 
-# Acesso ao protótipo <a href="http://api-despesas-pessoais-aspnetcore.bwg2czahbvgefufr.eastus.azurecontainer.io/swagger/index.html" target="_blank" >backend</a> de projeto
+# Acesso ao documentação swagger <a href="http://api-despesas-pessoais-aspnetcore.bwg2czahbvgefufr.eastus.azurecontainer.io/swagger/index.html" target="_blank" >backend</a> de projeto
 </h2>
 
+<h2 align="left"> 
+Workspace para teste da API Público  <a href="https://www.postman.com/bold-eclipse-872793/workspace/api-despesas-pessoais-azure" target="_blank" >Postman</a>
+</h2>
 
 <h6 align="justify">
     Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
