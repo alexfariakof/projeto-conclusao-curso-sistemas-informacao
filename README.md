@@ -10,7 +10,7 @@
     Obs.: Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
 </h6>
 <h2 align="left"> 
-# Acesso ao protótipo <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >frontend</a> do projeto
+Acesso ao protótipo <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >frontend</a> do projeto
 </h2>
 
 <h2 align="left"> 
@@ -26,7 +26,7 @@ Workspace público para teste da API no <a href="https://www.postman.com/bold-ec
 
 
 <h2 align="left">
-# Segue abaixo a documentação
+Documentação do Projeto Final Dezembro de 2022
 </h2>
 
 ![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_1.png)
