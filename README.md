@@ -25,7 +25,7 @@ Descrição
 </h6>
 
 <h2 align="left">
-Documentação do Projeto Final Dezembro de 2022
+Documentação do Projeto Final Apresentado em 2022
 </h2>
 
 ![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_1.png)
