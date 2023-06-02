@@ -2,16 +2,8 @@
    DESPESAS PESSOAIS  ANYWHERE
 </h2>
 
-<h2 align="left"> 
-Descrição 
-</h2>
-
 <h6 align="justify">
- Este é um projeto de software web desenvolvido em React com Material UI no frontend e .net core no backend para ajudar as pessoas a controlar suas despesas pessoais. Os usuários podem cadastrar suas despesas, categorizá-las e ver gráficos e relatórios para acompanhar suas finanças. A interface é moderna, responsiva e amigável, seguindo as boas práticas de programação. O projeto oferece uma solução completa para gerenciar finanças pessoais.
-</h6>
-
-<h6 align="justify">
-    Obs.: Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
+    Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conexão a API responsável por fazer persistência dos dados.
 </h6>
 <h2 align="left"> 
 Acesso ao protótipo <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >frontend</a> do projeto
@@ -24,10 +16,13 @@ Acesso documentação da API no Swagger <a href="http://api-despesas-pessoais-as
 Workspace público para teste da API no <a href="https://www.postman.com/bold-eclipse-872793/workspace/api-despesas-pessoais-azure" target="_blank" >Postman</a>
 </h2>
 
-<h6 align="justify">
-    Não há necessidade de se cadastrar pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conecção a API responsável por fazer persistência dos dados.
-</h6>
+<h2 align="left"> 
+Descrição 
+</h2>
 
+<h6 align="justify">
+ Este é um projeto de software web desenvolvido em React com Material UI no frontend e .net core no backend para ajudar as pessoas a controlar suas despesas pessoais. Os usuários podem cadastrar suas despesas, categorizá-las e ver gráficos e relatórios para acompanhar suas finanças. A interface é moderna, responsiva e amigável, seguindo as boas práticas de programação. O projeto oferece uma solução completa para gerenciar finanças pessoais.
+</h6>
 
 <h2 align="left">
 Documentação do Projeto Final Dezembro de 2022
