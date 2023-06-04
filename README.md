@@ -10,6 +10,10 @@ Acesso ao protótipo <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.ampl
 </h2>
 
 <h2 align="left"> 
+Acesso a aplicação atualizada em produção  <a href="despesas-pessoais-azure.cdeefmd5a6fjfece.eastus.azurecontainer.io" target="_blank" >Despesas Pessoais</a> do projeto
+</h2>
+
+<h2 align="left"> 
 Acesso documentação da API no Swagger <a href="http://api-despesas-pessoais-aspnetcore.bwg2czahbvgefufr.eastus.azurecontainer.io/swagger/index.html" target="_blank" >backend do projeto</a>
 </h2>
 <h2 align="left"> 
