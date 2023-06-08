@@ -3,7 +3,7 @@
 </h2>
 
 <h6 align="justify">
-    Obs.: Não há necessidade de se cadastrar patra acesar ao protótipo no momento pois é apenas uma demo com as principais funcionalidades da aplicação funcionando de maneira fake sem conexão a API responsável por fazer persistência dos dados.
+    Obs.: Não há necessidade de se cadastrar patra acessar ao protótipo dados.
 </h6>
 <h2 align="left"> 
 Acesso ao protótipo <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >frontend</a> do projeto
