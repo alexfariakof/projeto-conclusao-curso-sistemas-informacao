@@ -17,7 +17,7 @@ Acesso a aplicação atualizada em produção  <a href="http://ec2-34-239-129-20
 </h2>
 
 <h2 align="left"> 
-Acesso documentação da API atualizada no Swagger <a target="_blank" href="http://ec2-44-204-154-69.compute-1.amazonaws.com:42535/swagger/index.html" target="_parent" >backend do projeto</a>
+Acesso documentação da API atualizada no Swagger <a target="_blank" href="http://ec2-34-239-129-207.compute-1.amazonaws.com:42535/swagger/index.html" target="_parent" >backend do projeto</a>
       <h6 align="justify">
         Obs.: Não é possivél executar através do swagger a maioria dos end-points pois todos estam com autenticação via Bearer Token. Utilizar Workspace Postaman é uma opção depois de realizar cadastro, fazer o singIn que retorna o token para ser utilizado nos headers dos end points.
     </h6>
