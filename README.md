@@ -10,7 +10,7 @@ Acesso ao protótipo <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.ampl
 </h2>
 
 <h2 align="left"> 
-Acesso a aplicação atualizada em produção  <a href="http://ec2-44-204-154-69.compute-1.amazonaws.com:3000" target="_parent" >Despesas Pessoais</a> 
+Acesso a aplicação atualizada em produção  <a href="http://ec2-34-239-129-207.compute-1.amazonaws.com:3000/" target="_parent" >Despesas Pessoais</a> 
     <h6 align="justify">
     Obs.: Existe um usuário teste já criado para acessar aplicação "login=teste@teste.com/senha=teste"
     </h6>        
