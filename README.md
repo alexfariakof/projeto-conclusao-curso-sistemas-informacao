@@ -3,7 +3,7 @@
 </h2>
 
 <h2 align="left"> 
-Acesso ao protótipo Frontend em React <a href="https://despesas-pessoasis-prototipo-aws.dv40iwxf06g7a.amplifyapp.com/" target="_parent" >frontend</a> do projeto
+Acesso ao protótipo Frontend em React <a href="https://despesas-pessoais-prototipo-aws.d1lxs8h89uwhol.amplifyapp.com" target="_parent" >frontend</a> do projeto
     <h6 align="justify">
         Obs.: Não há necessidade de se cadastrar para acessar ao protótipo frontend pois é apenas uma demo com as principais             funcionalidades da aplicação funcionando com dados fake sem conexão a API responsável por fazer persistência dos dados e controle de acesso.
     </h6>
