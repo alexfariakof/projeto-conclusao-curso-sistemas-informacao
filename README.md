@@ -3,14 +3,7 @@
 </h2>
 
 <h2 align="left"> 
-Acesso ao protótipo Frontend em React <a href="https://despesas-pessoais-prototipo-aws.d1lxs8h89uwhol.amplifyapp.com" target="_parent" >frontend</a> do projeto
-    <h6 align="justify">
-        Obs.: Não há necessidade de se cadastrar para acessar ao protótipo frontend pois é apenas uma demo com as principais             funcionalidades da aplicação funcionando com dados fake sem conexão a API responsável por fazer persistência dos dados e controle de acesso.
-    </h6>
-</h2>
-
-<h2 align="left"> 
-Acesso a aplicação atualizada em produção  <a href="http://alexfariakof.com:3000/" target="_parent" >Despesas Pessoais</a> 
+Acesso a aplicação atualizada em produção  <a href="http://alexfariakof.com" target="_parent" >Despesas Pessoais</a> 
     <h6 align="justify">
     Obs.: Existe um usuário teste já criado para acessar aplicação "login=teste@teste.com/senha=teste"
     </h6>        
