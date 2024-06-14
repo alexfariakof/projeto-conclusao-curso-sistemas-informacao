@@ -10,14 +10,14 @@ Acesso a aplicação atualizada em produção  <a href="http://alexfariakof.com"
 </h2>
 
 <h2 align="left"> 
-Acesso documentação da API atualizada no Swagger <a target="_blank" href="http://alexfariakof.com:42535/swagger/index.html" target="_parent" >backend do projeto</a>
+Acesso documentação da API atualizada no Swagger <a target="_blank" href="http://alexfariakof.com:42536/swagger/index.html" target="_parent" >backend do projeto</a>
       <h6 align="justify">
         Obs.: Não é possivél executar através do swagger a maioria dos end-points pois todos estam com autenticação via Bearer Token. Utilizar Workspace Postaman é uma opção depois de realizar cadastro, fazer o singIn que retorna o token para ser utilizado nos headers dos end points.
     </h6>
 </h2>
 
 <h2 align="left"> 
-Workspace para teste da API Público  <a href="https://www.postman.com/bold-eclipse-872793/workspace/api-despesas-pessoais-azure" target="_blank" >Postman</a>
+Workspace para teste da API Público  <a href="https://bold-eclipse-872793.postman.co/workspace/local-api-despesas-pessoais~bb08206c-ff0d-44c9-b49e-55339a554a3b/overview" target="_blank" >Postman</a>
 </h2>
 <h2 align="left"> 
 Descrição 
@@ -89,7 +89,3 @@ Documentação do Projeto Final Apresentado em 2022
 ![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_29.png)
 
 ![alt text](https://github.com/alexfariakof/app-despesas-anyware/blob/main/.documentos/.Telas/projeto_final_30.png)
-
-<h2 align="left"> 
-# Acesso ao projeto <a href="https://despesas-pessoasis-aws.d26q19cgt5w2n4.amplifyapp.com/" target="_blank" >Despesas Pessoais Inteligente</a>
-</h2>
