@@ -5,7 +5,7 @@
 <h2 align="left"> 
 Acesso a aplicação atualizada em produção  <a href="http://alexfariakof.com" target="_parent" >Despesas Pessoais</a> 
     <h6 align="justify">
-    Obs.: Existe um usuário teste já criado para acessar aplicação "login=teste@teste.com/senha=teste"
+    Obs.: Existe um usuário teste já criado para acessar aplicação "login=teste@teste.com/senha=12345T!"
     </h6>        
 </h2>
 
